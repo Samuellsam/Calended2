@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Caveat;
+  src: url("/fonts/Caveat/static/Caveat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Caveat;
+  src: url("/fonts/Caveat/static/Caveat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RubikDoodleShadow;
+  src: url("/fonts/Rubik_Doodle_Shadow/RubikDoodleShadow-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-caveat {
+  font-family: "Caveat";
+}
+
+.font-rubik-doodle-shadow {
+  font-family: "RubikDoodleShadow";
+}
+
+.transition-bg {
+  transition: background-color 0.5s ease;
+  transition: filter 0.5s ease;
+}
+
+.dark-hover:hover {
+  filter: brightness(80%);
+}

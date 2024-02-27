@@ -1,0 +1,352 @@
+{
+  "baseDate": {
+    "date": "2023-01-02T00:00:00.000Z",
+    "wfhTeamId": "20afdf02-bacc-4937-97f8-2c47e151582b"
+  },
+  "offDays": [
+    {
+      "id": "25fe5a9d-3738-43b3-ae03-08e633d248e8",
+      "from": "2023-01-01T00:00:00.000Z",
+      "to": "2023-01-01T00:00:00.000Z",
+      "name": "Tahun Baru 2023 Masehi",
+      "type": "holiday"
+    },
+    {
+      "id": "cbc23883-4acb-4945-becb-769f0aa8c917",
+      "from": "2023-01-22T00:00:00.000Z",
+      "to": "2023-01-22T00:00:00.000Z",
+      "name": "Tahun Baru Imlek 2574 Kongzili",
+      "type": "holiday"
+    },
+    {
+      "id": "147ec05b-ee11-44fa-9716-8bdcc569a8fe",
+      "from": "2023-02-18T00:00:00.000Z",
+      "to": "2023-02-18T00:00:00.000Z",
+      "name": "Isra Mikraj Nabi Muhammad SAW",
+      "type": "holiday"
+    },
+    {
+      "id": "2831f722-b0c5-4154-a141-93d8b9e96ead",
+      "from": "2023-03-22T00:00:00.000Z",
+      "to": "2023-03-22T00:00:00.000Z",
+      "name": "Hari Suci Nyepi Tahun Baru Saka 1945",
+      "type": "holiday"
+    },
+    {
+      "id": "e8699e5a-77e9-48a7-907f-ada8620a4909",
+      "from": "2023-04-07T00:00:00.000Z",
+      "to": "2023-04-07T00:00:00.000Z",
+      "name": "Wafat Isa Al Masih",
+      "type": "holiday"
+    },
+    {
+      "id": "79411696-f857-4b47-b42a-1ce1cf92b425",
+      "from": "2023-04-22T00:00:00.000Z",
+      "to": "2023-04-23T00:00:00.000Z",
+      "name": "Hari Raya Idul Fitri 1444 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "cf6e8d9f-9d7b-4c9a-981e-c0560a5f588c",
+      "from": "2023-05-01T00:00:00.000Z",
+      "to": "2023-05-01T00:00:00.000Z",
+      "name": "Hari Buruh Internasional",
+      "type": "holiday"
+    },
+    {
+      "id": "b3466d7b-5c57-459d-8f3f-d66165d2c431",
+      "from": "2023-05-18T00:00:00.000Z",
+      "to": "2023-05-18T00:00:00.000Z",
+      "name": "Kenaikan Isa Al Masih",
+      "type": "holiday"
+    },
+    {
+      "id": "ebd3c463-8294-4fe7-bfb9-4ba5dab40947",
+      "from": "2023-06-01T00:00:00.000Z",
+      "to": "2023-06-01T00:00:00.000Z",
+      "name": "Hari Lahir Pancasila",
+      "type": "holiday"
+    },
+    {
+      "id": "fb2851cf-ae0b-4200-8e61-da9977edf663",
+      "from": "2023-06-04T00:00:00.000Z",
+      "to": "2023-06-04T00:00:00.000Z",
+      "name": "Hari Raya Waisak 2567 BE",
+      "type": "holiday"
+    },
+    {
+      "id": "ce0718b2-f153-4a96-869c-25fc263230f0",
+      "from": "2023-06-28T00:00:00.000Z",
+      "to": "2023-06-30T00:00:00.000Z",
+      "name": "Hari Raya Idul Adha 1444 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "e8549147-1fc3-4772-9a95-71eacc557b37",
+      "from": "2023-07-19T00:00:00.000Z",
+      "to": "2023-07-19T00:00:00.000Z",
+      "name": "Tahun Baru Islam 14445 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "37bf1501-55fe-40c8-bcf9-57afb26c50e1",
+      "from": "2023-08-17T00:00:00.000Z",
+      "to": "2023-08-17T00:00:00.000Z",
+      "name": "Hari Kemerdekaan Republik Indonesia",
+      "type": "holiday"
+    },
+    {
+      "id": "2659dd32-468a-4452-8b08-ccb2d9f41678",
+      "from": "2023-09-28T00:00:00.000Z",
+      "to": "2023-09-28T00:00:00.000Z",
+      "name": "Maulid Nabi Muhammad SAW",
+      "type": "holiday"
+    },
+    {
+      "id": "c800cd97-6eca-4025-b350-9664e12929e3",
+      "from": "2023-12-25T00:00:00.000Z",
+      "to": "2023-12-25T00:00:00.000Z",
+      "name": "Hari Raya Natal",
+      "type": "holiday"
+    },
+    {
+      "id": "928fd659-5ffd-4142-844b-663c7f8db61f",
+      "from": "2023-01-23T00:00:00.000Z",
+      "to": "2023-01-23T00:00:00.000Z",
+      "name": "Tahun Baru Imlek 2574 Kongzili",
+      "type": "mass_leave"
+    },
+    {
+      "id": "9b416e5d-230a-4954-8e21-f743029d0850",
+      "from": "2023-03-23T00:00:00.000Z",
+      "to": "2023-03-23T00:00:00.000Z",
+      "name": "Hari Suci Nyepi Tahun Baru Saka 1945",
+      "type": "mass_leave"
+    },
+    {
+      "id": "bd0c789a-a65a-458c-b775-7652d0c250d4",
+      "from": "2023-04-19T00:00:00.000Z",
+      "to": "2023-04-25T00:00:00.000Z",
+      "name": "Hari Raya Idul Fitri 1444 Hijriah",
+      "type": "mass_leave"
+    },
+    {
+      "id": "63855349-179f-4b26-935b-12496b6dba32",
+      "from": "2023-06-02T00:00:00.000Z",
+      "to": "2023-06-02T00:00:00.000Z",
+      "name": "Hari Raya Waisak",
+      "type": "mass_leave"
+    },
+    {
+      "id": "0a3174da-9706-489f-87b9-56f2cd8e9c93",
+      "from": "2023-12-26T00:00:00.000Z",
+      "to": "2023-12-26T00:00:00.000Z",
+      "name": "Hari Raya Natal",
+      "type": "mass_leave"
+    },
+    {
+      "id": "ffd3c0f5-5819-466d-b856-585e28e53e5b",
+      "from": "2024-01-01T00:00:00.000Z",
+      "to": "2024-01-01T00:00:00.000Z",
+      "name": "Tahun Baru 2024 Masehi",
+      "type": "holiday"
+    },
+    {
+      "id": "ec17d4fc-cf0e-41fb-bdb2-3af6644e51c0",
+      "from": "2024-02-08T00:00:00.000Z",
+      "to": "2024-02-08T00:00:00.000Z",
+      "name": "Isra Mikraj Nabi Muhammad SAW",
+      "type": "holiday"
+    },
+    {
+      "id": "6f020160-65da-405d-90c4-f1a1cd1ff038",
+      "from": "2024-02-10T00:00:00.000Z",
+      "to": "2024-02-10T00:00:00.000Z",
+      "name": "Tahun Baru Imlek 2575 Kongzili",
+      "type": "holiday"
+    },
+    {
+      "id": "ac14485b-413a-4dfc-96ba-e7951b4dc589",
+      "from": "2024-03-11T00:00:00.000Z",
+      "to": "2024-03-11T00:00:00.000Z",
+      "name": "Hari Suci Nyepi Tahun Baru Saka 1946",
+      "type": "holiday"
+    },
+    {
+      "id": "f22cc882-23ad-4339-935b-6fc09bf034bc",
+      "from": "2024-03-29T00:00:00.000Z",
+      "to": "2024-03-29T00:00:00.000Z",
+      "name": "Wafat Isa Al Masih",
+      "type": "holiday"
+    },
+    {
+      "id": "45fc31a9-19df-4c66-b54e-be52cb6ead9c",
+      "from": "2024-03-31T00:00:00.000Z",
+      "to": "2024-03-31T00:00:00.000Z",
+      "name": "Hari Paskah",
+      "type": "holiday"
+    },
+    {
+      "id": "459e8d63-a4aa-4612-af46-2acd2b42b1db",
+      "from": "2024-04-10T00:00:00.000Z",
+      "to": "2024-04-11T00:00:00.000Z",
+      "name": "Hari Raya Idul Fitri 1445 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "bcad121e-c0e0-4ae7-b039-759ce507778c",
+      "from": "2024-05-01T00:00:00.000Z",
+      "to": "2024-05-01T00:00:00.000Z",
+      "name": "Hari Buruh Internasional",
+      "type": "holiday"
+    },
+    {
+      "id": "1c6736f5-8b2d-4d1b-80e8-8cc12c1c7ab9",
+      "from": "2024-05-09T00:00:00.000Z",
+      "to": "2024-05-09T00:00:00.000Z",
+      "name": "Kenaikan Isa Al Masih",
+      "type": "holiday"
+    },
+    {
+      "id": "0210bbf5-c240-42dd-93d4-61b0d38a7ef2",
+      "from": "2024-05-23T00:00:00.000Z",
+      "to": "2024-05-23T00:00:00.000Z",
+      "name": "Hari Raya Waisak 2568 BE",
+      "type": "holiday"
+    },
+    {
+      "id": "0f60a66d-5df4-4fff-9430-94e0a26d0ef2",
+      "from": "2024-06-01T00:00:00.000Z",
+      "to": "2024-06-01T00:00:00.000Z",
+      "name": "Hari Lahir Pancasila",
+      "type": "holiday"
+    },
+    {
+      "id": "231343ce-b59e-49b3-9c8b-5f07c85eae22",
+      "from": "2024-06-17T00:00:00.000Z",
+      "to": "2024-06-17T00:00:00.000Z",
+      "name": "Hari Raya Idul Adha 1445 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "3d2a30ad-6e06-4318-9e50-67e1fcd90772",
+      "from": "2024-07-07T00:00:00.000Z",
+      "to": "2024-07-07T00:00:00.000Z",
+      "name": "Tahun Baru Islam 1446 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "6de70a2b-4c86-45ab-96b2-d196380f17da",
+      "from": "2024-08-17T00:00:00.000Z",
+      "to": "2024-08-17T00:00:00.000Z",
+      "name": "Hari Kemerdekaan Republik Indonesia",
+      "type": "holiday"
+    },
+    {
+      "id": "077a6a4d-cc13-41fa-b88b-b28b2790ce5e",
+      "from": "2024-09-16T00:00:00.000Z",
+      "to": "2024-09-16T00:00:00.000Z",
+      "name": "Maulid Nabi Muhammad SAW",
+      "type": "holiday"
+    },
+    {
+      "id": "8445b16d-555a-4523-924e-6247d103be6b",
+      "from": "2024-12-25T00:00:00.000Z",
+      "to": "2024-12-25T00:00:00.000Z",
+      "name": "Hari Raya Natal",
+      "type": "holiday"
+    },
+    {
+      "id": "94829b9c-c018-40e7-b938-05bfd0ce820c",
+      "from": "2024-02-09T00:00:00.000Z",
+      "to": "2024-02-09T00:00:00.000Z",
+      "name": "Tahun Baru Imlek 2575 Kongzili",
+      "type": "mass_leave"
+    },
+    {
+      "id": "48a724c9-edae-4abe-a0f8-20cae05ba55a",
+      "from": "2024-02-14T00:00:00.000Z",
+      "to": "2024-02-14",
+      "name": "Pemilu",
+      "type": "mass_leave"
+    },
+    {
+      "id": "5304818f-ba57-4648-9e4c-3508b01d04e1",
+      "from": "2024-03-12T00:00:00.000Z",
+      "to": "2024-03-12T00:00:00.000Z",
+      "name": "Hari Suci Nyepi Tahun Baru Saka 1946",
+      "type": "mass_leave"
+    },
+    {
+      "id": "1409ab5b-d6aa-4da8-a74a-77465e325a37",
+      "from": "2024-04-08T00:00:00.000Z",
+      "to": "2024-04-15T00:00:00.000Z",
+      "name": "Hari Raya Idul Fitri 1445 Hijriah",
+      "type": "mass_leave"
+    },
+    {
+      "id": "b4ee4d08-b513-4683-8600-8adc963f8ab7",
+      "from": "2024-05-10T00:00:00.000Z",
+      "to": "2024-05-10T00:00:00.000Z",
+      "name": "Kenaikan Isa Al Masih",
+      "type": "mass_leave"
+    },
+    {
+      "id": "3e7bc128-5c24-485e-b6d6-3b276c42568b",
+      "from": "2024-05-24T00:00:00.000Z",
+      "to": "2024-05-24T00:00:00.000Z",
+      "name": "Hari Raya Waisak",
+      "type": "mass_leave"
+    },
+    {
+      "id": "d7340acf-9fcb-421a-b608-0bd42630716f",
+      "from": "2024-06-18T00:00:00.000Z",
+      "to": "2024-06-18T00:00:00.000Z",
+      "name": "Hari Raya Idul Adha 1445 Hijriah",
+      "type": "mass_leave"
+    },
+    {
+      "id": "415d129b-4b63-4b0d-b49b-e6f16793aad9",
+      "from": "2024-12-26T00:00:00.000Z",
+      "to": "2024-12-26T00:00:00.000Z",
+      "name": "Hari Raya Natal.",
+      "type": "mass_leave"
+    }
+  ],
+  "teams": [
+    {
+      "id": "9d35a309-3d56-4f4a-adcb-a2bec148300a",
+      "name": "A",
+      "color": "#FDE68A",
+      "order": 0,
+      "members": []
+    },
+    {
+      "id": "1d9fe458-3497-4d3e-9f39-3532da0c0e6c",
+      "name": "B",
+      "color": "#BEF264",
+      "order": 1,
+      "members": [
+        {
+          "id": "03c4e8c1-0a75-45c9-8dae-5d2ff5664be0",
+          "name": "Samuel",
+          "birthday": "2000-12-21"
+        }
+      ]
+    },
+    {
+      "id": "20afdf02-bacc-4937-97f8-2c47e151582b",
+      "name": "C",
+      "color": "#F97316",
+      "order": 2,
+      "members": []
+    },
+    {
+      "id": "44ef2147-4dce-42e9-881c-fd73f44d208a",
+      "name": "D",
+      "color": "#67E8F9",
+      "order": 3,
+      "members": []
+    }
+  ]
+}
