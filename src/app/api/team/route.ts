@@ -1,8 +1,8 @@
 import TeamController from "@/controllers/TeamController";
-import { NextApiRequest } from "next";
+import { NextRequest } from "next/server";
 
 const teamController = new TeamController();
 
-export async function GET(request: NextApiRequest): Promise<Response> {
+export async function GET(request: NextRequest): Promise<Response> {
   return await teamController.get();
 }

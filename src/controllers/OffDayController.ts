@@ -10,7 +10,7 @@ export default class OffDayController {
 
   public getAll = async (): Promise<Response> => {
     try {
-      const data: OffDay[] = await this.offDayRepository.findAll();
+      const data = await this.offDayRepository.findAll();
 
       return Response.json({
         offDays: data,

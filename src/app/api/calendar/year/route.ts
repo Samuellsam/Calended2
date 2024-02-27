@@ -1,9 +1,9 @@
 import CalendarController from "@/controllers/CalendarController";
-import { NextApiRequest } from "next";
+import { NextRequest } from "next/server";
 
 const calendarController = new CalendarController();
 
-export async function GET(request: NextApiRequest): Promise<Response> {
+export async function GET(request: NextRequest): Promise<Response> {
   const { searchParams } = new URL(request.url as string);
 
   const yearParam = searchParams.get("year");
