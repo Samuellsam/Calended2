@@ -1,5 +1,11 @@
 import { DayCalendarModel } from "@/types/day-calendar";
-import { isDateInMonth, isToday } from "@/utils/date-util";
+import {
+  isDateInMonth,
+  isDateInTodayMonth,
+  isToday,
+  isWeekend,
+  todayMonth,
+} from "@/utils/date-util";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import moment from "moment";
@@ -20,15 +26,18 @@ const DayCalendar: React.FC<{
   const getDayClass = () => {
     const defaultClass = "relative rounded-lg m-1 transition-bg";
 
+    if (!isDateInMonth(props.dayCalendar.date, props.dayCalendar.month.order)) {
+      return `${defaultClass} bg-slate-200 hover:bg-slate-400 dark:hover:bg-slate-600 dark:bg-slate-800 text-slate-800 dark:text-slate-200`;
+    }
     if (isOffDay()) {
       return `${defaultClass} bg-red-800 hover:bg-red-600 text-slate-200`;
     }
 
-    if (props.dayCalendar.wfhTeam) {
-      return `${defaultClass} text-slate-950`;
+    if (isWeekend(props.dayCalendar.date)) {
+      return `${defaultClass} bg-slate-300 hover:bg-slate-500 dark:bg-slate-700 text-slate-700 dark:text-slate-300`;
     }
 
-    return `${defaultClass} bg-slate-200 hover:bg-slate-400 dark:hover:bg-slate-600 dark:bg-slate-800 text-slate-800 dark:text-slate-200`;
+    return defaultClass;
   };
 
   return (
@@ -44,6 +53,11 @@ const DayCalendar: React.FC<{
         <WfoCover
           wfhTeam={props.dayCalendar.wfhTeam}
           wfoTeam={props.dayCalendar.wfoTeam}
+          mode={
+            isDateInMonth(props.dayCalendar.date, props.dayCalendar.month.order)
+              ? "colorful"
+              : "dark"
+          }
         />
       )}
 

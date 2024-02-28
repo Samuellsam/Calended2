@@ -107,7 +107,7 @@ const HomePage: React.FC<{}> = () => {
     ));
   };
 
-  return <Box className="pb-1">{getCalendar()}</Box>;
+  return <Box className="pb-1 px-40">{getCalendar()}</Box>;
 };
 
 export default HomePage;
