@@ -16,6 +16,7 @@ import { useState } from "react";
 
 const DayCalendar: React.FC<{
   dayCalendar: DayCalendarModel;
+  onDetail: (dayCalendar: DayCalendarModel) => void;
 }> = (props) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -74,7 +75,7 @@ const DayCalendar: React.FC<{
       {isHovered && (
         <FullscreenOutlinedIcon
           className="cursor-pointer absolute right-2 top-2 hover:bg-white hover:text-slate-800 rounded-md"
-          onClick={() => {}}
+          onClick={() => props.onDetail(props.dayCalendar)}
         />
       )}
     </Box>
