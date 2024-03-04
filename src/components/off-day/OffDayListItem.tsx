@@ -6,7 +6,7 @@ const OffDayListTeam: React.FC<{
   offDay: OffDay;
 }> = (props) => {
   return (
-    <Card>
+    <Card className="mb-1">
       <CardContent>
         <small className="font-bold">
           {`${props.offDay.name} (${props.offDay.type})`}

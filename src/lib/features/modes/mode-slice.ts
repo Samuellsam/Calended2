@@ -37,7 +37,7 @@ export const modeSlice = createSlice({
 
       modeSlice.caseReducers.setMode(state, {
         payload: newModeId,
-        type: "theme/setMode",
+        type: "mode/setMode",
       });
     },
     setMode: (state, action: PayloadAction<ModeType>) => {

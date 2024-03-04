@@ -13,6 +13,7 @@ import WfoCover from "./wfo-cover";
 import TodaySign from "./today-sign";
 import FullscreenOutlinedIcon from "@mui/icons-material/FullscreenOutlined";
 import { useState } from "react";
+import Marquee from "./marquee";
 
 const DayCalendar: React.FC<{
   dayCalendar: DayCalendarModel;
@@ -71,6 +72,13 @@ const DayCalendar: React.FC<{
       <Typography className="my-2 mx-3 font-bold font-caveat relative text-start">
         {props.dayCalendar.date.get("date")}
       </Typography>
+
+      {isOffDay() && (
+        <Marquee
+          id={`marquee-${props.dayCalendar.date.toString()}`}
+          text={props.dayCalendar.offDays.map((o) => `${o.name} (${o.type})`)}
+        />
+      )}
 
       {isHovered && (
         <FullscreenOutlinedIcon

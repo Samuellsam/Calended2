@@ -39,6 +39,14 @@ const Navbar: React.FC<{}> = (props) => {
         </Typography>
 
         <Box className="ml-auto flex items-center">
+          {/* TODAY */}
+          <TodayOutlinedIcon
+            className="text-red-700 dark:text-yellow-500 cursor-pointer"
+            onClick={() => scrollToToday()}
+          />
+
+          <div className="mx-2"></div>
+
           {/* MODE */}
           {mode.id === "month" ? (
             <StopOutlinedIcon
@@ -51,14 +59,6 @@ const Navbar: React.FC<{}> = (props) => {
               onClick={() => dispatch(toggleMode())}
             />
           )}
-
-          <div className="mx-2"></div>
-
-          {/* TODAY */}
-          <TodayOutlinedIcon
-            className="text-red-700 dark:text-yellow-500 cursor-pointer"
-            onClick={() => scrollToToday()}
-          />
 
           <div className="mx-2"></div>
 

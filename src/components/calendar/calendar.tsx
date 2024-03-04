@@ -34,9 +34,9 @@ const Calendar: React.FC<{}> = () => {
   const [selectedCalendar, setSelectedCalendar] = useState<DayCalendarModel>();
 
   useEffect(() => {
-    if (selectedMode.id === "month") {
+    if (selectedMode.id == "month") {
       fetchMonthlyCalendar();
-    } else if (selectedMode.id === "year") {
+    } else if (selectedMode.id == "year") {
       fetchYearlyCalendar();
     }
   }, [selectedMode.id]);
