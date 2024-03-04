@@ -9,11 +9,9 @@ const MemberListItem: React.FC<{
     <Tooltip
       placement="right"
       title={
-        <div className="grid grid-cols-2 gap-1">
-          <p>Name</p>
-          <p>: {props.member.name}</p>
-          <p>Birthday</p>
-          <p>: {props.member.birthday.format("MMM Do")}</p>
+        <div>
+          <p>{props.member.name}</p>
+          <p>{props.member.birthday.format("MMM Do")} 🎁</p>
         </div>
       }
       arrow

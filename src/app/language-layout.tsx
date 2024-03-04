@@ -30,5 +30,5 @@ export default function LanguageLayout({
     setIsLoading(false);
   }, []);
 
-  return <>{!isLoading && <>{children}</>}</>;
+  return <>{!isLoading && <div className="h-full w-full">{children}</div>}</>;
 }

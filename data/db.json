@@ -331,6 +331,11 @@
           "id": "03c4e8c1-0a75-45c9-8dae-5d2ff5664be0",
           "name": "Samuel",
           "birthday": "2000-12-21"
+        },
+        {
+          "id": "d945f728-5a35-49ed-b189-8981c268b735",
+          "name": "Kevin Sagita Wibowo",
+          "birthday": "2000-11-23"
         }
       ]
     },
@@ -346,7 +351,13 @@
       "name": "D",
       "color": "#67E8F9",
       "order": 3,
-      "members": []
+      "members": [
+        {
+          "id": "498baa38-ac3b-4df1-8bc0-9331f3b4767c",
+          "name": "Hussein Faisol",
+          "birthday": "1999-07-05"
+        }
+      ]
     }
   ]
 }

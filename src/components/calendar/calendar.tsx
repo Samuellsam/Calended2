@@ -2,7 +2,7 @@
 
 import DayCalendar from "@/components/calendar/day-calendar";
 import MonthHeader from "@/components/month-header/month-header";
-import { RootState } from "@/lib/store";
+import { AppDispatch, RootState } from "@/lib/store";
 import {
   Box,
   Dialog,
@@ -11,79 +11,52 @@ import {
   DialogTitle,
   Typography,
 } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { DayCalendarModel, initDayCalendarModel } from "@/types/day-calendar";
 import { isWeekend, todayMonth, todayYear } from "@/utils/date-util";
 import TeamListItem from "../team/TeamListItem";
 import OffDayListTeam from "../off-day/OffDayListItem";
+import {
+  clearMonthlyCalendar,
+  clearYearlyCalendar,
+  fetchMonthlyCalendar,
+  fetchYearlyCalendar,
+} from "@/lib/features/calendar/calendar-slice";
 
 const Calendar: React.FC<{}> = () => {
-  const months = useSelector((state: RootState) => state.month.months);
+  const dispatch: AppDispatch = useDispatch();
+
   const selectedMode = useSelector(
     (state: RootState) => state.mode.selectedMode
   );
-  const [yearlyCalendar, setYearlyCalendar] = useState<DayCalendarModel[][]>(
-    []
+  const months = useSelector((state: RootState) => state.month.months);
+
+  const year = useSelector((state: RootState) => state.calendar.year);
+  const month = useSelector((state: RootState) => state.calendar.month);
+
+  const yearlyCalendar = useSelector(
+    (state: RootState) => state.calendar.yearlyCalendar
   );
-  const [monthlyCalendar, setMonthlyCalendar] = useState<DayCalendarModel[]>(
-    []
+  const monthlyCalendar = useSelector(
+    (state: RootState) => state.calendar.monthlyCalendar
   );
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectedCalendar, setSelectedCalendar] = useState<DayCalendarModel>();
 
   useEffect(() => {
-    if (selectedMode.id == "month") {
-      fetchMonthlyCalendar();
-    } else if (selectedMode.id == "year") {
-      fetchYearlyCalendar();
-    }
-  }, [selectedMode.id]);
-
-  const fetchMonthlyCalendar = async () => {
-    const response = await axios.get("/api/calendar/month", {
-      params: {
-        month: todayMonth() + 1,
-        year: todayYear(),
-      },
-    });
-
-    setMonthlyCalendar(
-      (response.data.calendar as DayCalendarModel[]).map((calendar) => {
-        return initDayCalendarModel(calendar);
-      })
-    );
-  };
-
-  const fetchYearlyCalendar = async () => {
-    try {
-      const response = await axios.get("/api/calendar/year", {
-        params: {
-          year: todayYear(),
-        },
-      });
-
-      setYearlyCalendar(
-        (response.data.calendar as DayCalendarModel[][]).map(
-          (monthCalendar) => {
-            return monthCalendar.map((calendar) => {
-              return initDayCalendarModel(calendar);
-            });
-          }
-        )
-      );
-    } catch (error) {}
-  };
+    dispatch(clearMonthlyCalendar());
+    dispatch(clearYearlyCalendar());
+    dispatch(fetchMonthlyCalendar({ month: month + 1, year }));
+    dispatch(fetchYearlyCalendar({ year }));
+  }, [year, month]);
 
   const getCalendar = () => {
     if (selectedMode.id === "month") {
       return (
         <Box className="mb-24" key={months[todayMonth()].order}>
-          <MonthHeader
-            month={months[todayMonth()]}
-            key={months[todayMonth()].order}
-          />
+          <MonthHeader month={months[month]} key={months[month].order} />
           {monthlyCalendar && monthlyCalendar.length > 0 ? (
             <div className="grid grid-cols-7 gap-1 text-center">
               {monthlyCalendar.map((c: DayCalendarModel, idx) => (

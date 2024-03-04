@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full w-full">
+    <html lang="en" className="h-full w-full bg-slate-100 dark:bg-slate-900">
       <head>
         <title>Calended | Minimalistic Work Calendar</title>
       </head>

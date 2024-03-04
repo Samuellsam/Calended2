@@ -29,8 +29,13 @@ const DayCalendar: React.FC<{
     const defaultClass = "relative rounded-lg m-1 transition-bg";
 
     if (!isDateInMonth(props.dayCalendar.date, props.dayCalendar.month.order)) {
+      if (isOffDay()) {
+        return `${defaultClass} bg-red-950 hover:bg-red-800 text-slate-200`;
+      }
+
       return `${defaultClass} bg-slate-200 hover:bg-slate-400 dark:hover:bg-slate-600 dark:bg-slate-800 text-slate-800 dark:text-slate-200`;
     }
+
     if (isOffDay()) {
       return `${defaultClass} bg-red-800 hover:bg-red-600 text-slate-200`;
     }
