@@ -36,16 +36,12 @@ const MonthHeader: React.FC<{
 
         {mode.id === "month" && (
           <Box className="flex">
-            <Button className="my-auto bg-slate-200 text-slate-800 w-min">
-              <ArrowLeftIcon
-                onClick={() => dispatch(setMonth({ month: month - 1 }))}
-              />
+            <Button className="my-auto bg-slate-200 text-slate-800 w-min" onClick={() => dispatch(setMonth({ month: month - 1 }))}>
+              <ArrowLeftIcon />
             </Button>
             <div className="mx-1"></div>
-            <Button className="my-auto bg-slate-200 text-slate-800 w-min">
-              <ArrowRightIcon
-                onClick={() => dispatch(setMonth({ month: month + 1 }))}
-              />
+            <Button className="my-auto bg-slate-200 text-slate-800 w-min" onClick={() => dispatch(setMonth({ month: month + 1 }))}>
+              <ArrowRightIcon />
             </Button>
           </Box>
         )}
