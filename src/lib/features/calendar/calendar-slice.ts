@@ -26,7 +26,7 @@ export const calendarSlice = createSlice({
       if (action.payload.month < 12) {
         state.month = action.payload.month;
       } else {
-        state.month = 1;
+        state.month = 0;
         state.year = state.year + 1;
       }
     },
