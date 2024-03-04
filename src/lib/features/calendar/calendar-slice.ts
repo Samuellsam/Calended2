@@ -29,7 +29,7 @@ export const calendarSlice = createSlice({
         state.month = 0;
         state.year = state.year + 1;
       } else if (action.payload.month < 0) {
-        state.month = 0;
+        state.month = 11;
         state.year = state.year - 1;
       }
     },
