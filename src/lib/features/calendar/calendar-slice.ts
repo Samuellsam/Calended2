@@ -1,4 +1,3 @@
-import { CalendarModel, dfltCalendarModel } from "@/types/calendar";
 import { DayCalendarModel, initDayCalendarModel } from "@/types/day-calendar";
 import { todayMonth, todayYear } from "@/utils/date-util";
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
@@ -24,7 +23,12 @@ export const calendarSlice = createSlice({
       state.year = action.payload.year;
     },
     setMonth: (state, action: PayloadAction<{ month: number }>) => {
-      state.month = action.payload.month;
+      if (action.payload.month < 12) {
+        state.month = action.payload.month;
+      } else {
+        state.month = 1;
+        state.year = state.year + 1;
+      }
     },
     clearMonthlyCalendar: (state) => {
       state.monthlyCalendar = [];
