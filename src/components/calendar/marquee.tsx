@@ -21,14 +21,14 @@ const Marquee: React.FC<{
 
   return (
     <p
-      className="m-0 p-0 flex"
+      className="m-0 p-0 my-auto flex"
       style={{
         overflow: "hidden",
       }}
     >
       <small
         id={props.id}
-        className="font-caveat"
+        className="font-caveat text-xl"
         style={{
           display: "inline-block",
           textWrap: "nowrap",

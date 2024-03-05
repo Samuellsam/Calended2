@@ -19,8 +19,6 @@ const DayCalendar: React.FC<{
   dayCalendar: DayCalendarModel;
   onDetail: (dayCalendar: DayCalendarModel) => void;
 }> = (props) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   const isOffDay = () => {
     return props.dayCalendar.offDays && props.dayCalendar.offDays.length > 0;
   };
@@ -41,7 +39,7 @@ const DayCalendar: React.FC<{
     }
 
     if (isWeekend(props.dayCalendar.date)) {
-      return `${defaultClass} bg-slate-300 hover:bg-slate-500 dark:bg-slate-700 text-slate-700 dark:text-slate-300`;
+      return `${defaultClass} bg-slate-300 hover:bg-slate-500 dark:bg-slate-700 text-slate-700 dark:text-slate-300 dark-hover`;
     }
 
     return defaultClass;
@@ -53,8 +51,6 @@ const DayCalendar: React.FC<{
       style={{
         aspectRatio: "1/1",
       }}
-      onMouseEnter={() => setIsHovered(!isHovered)}
-      onMouseLeave={() => setIsHovered(!isHovered)}
     >
       {props.dayCalendar.wfhTeam && (
         <WfoCover
@@ -85,12 +81,10 @@ const DayCalendar: React.FC<{
         />
       )}
 
-      {isHovered && (
-        <FullscreenOutlinedIcon
-          className="cursor-pointer absolute right-2 top-2 hover:bg-white hover:text-slate-800 rounded-md"
-          onClick={() => props.onDetail(props.dayCalendar)}
-        />
-      )}
+      <FullscreenOutlinedIcon
+        className="cursor-pointer absolute right-2 top-2 hover:bg-white hover:text-slate-800 rounded-md calendar-detail"
+        onClick={() => props.onDetail(props.dayCalendar)}
+      />
     </Box>
   );
 };

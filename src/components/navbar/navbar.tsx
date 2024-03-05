@@ -41,13 +41,13 @@ const Navbar: React.FC<{}> = (props) => {
             className="font-bold mx-2 text-slate-800 dark:text-slate-200 font-rubik-doodle-shadow"
           >
             Calended2
-            <IconButton className="my-auto ml-1">
+            <IconButton className="my-auto ml-1 prev-year-control">
               <ArrowLeftIcon
                 onClick={() => dispatch(setYear({ year: year - 1 }))}
               />
             </IconButton>
             <span className="text-red-700 dark:text-yellow-500">({year});</span>
-            <IconButton className="my-auto">
+            <IconButton className="my-auto next-year-control">
               <ArrowRightIcon
                 onClick={() => dispatch(setYear({ year: year + 1 }))}
               />
@@ -58,7 +58,7 @@ const Navbar: React.FC<{}> = (props) => {
         <Box className="ml-auto flex items-center">
           {/* TODAY */}
           <TodayOutlinedIcon
-            className="text-red-700 dark:text-yellow-500 cursor-pointer"
+            className="text-red-700 dark:text-yellow-500 cursor-pointer today-scroll"
             onClick={() => scrollToToday()}
           />
 
@@ -67,12 +67,12 @@ const Navbar: React.FC<{}> = (props) => {
           {/* MODE */}
           {mode.id === "month" ? (
             <StopOutlinedIcon
-              className="text-red-700 dark:text-yellow-500 cursor-pointer"
+              className="text-red-700 dark:text-yellow-500 cursor-pointer calendar-mode"
               onClick={() => dispatch(toggleMode())}
             />
           ) : (
             <GridViewOutlinedIcon
-              className="text-red-700 dark:text-yellow-500 cursor-pointer"
+              className="text-red-700 dark:text-yellow-500 cursor-pointer calendar-mode"
               onClick={() => dispatch(toggleMode())}
             />
           )}
@@ -81,7 +81,7 @@ const Navbar: React.FC<{}> = (props) => {
 
           {/* LANGUAGE */}
           <Typography
-            className="text-red-700 dark:text-yellow-500 font-bold cursor-pointer"
+            className="text-red-700 dark:text-yellow-500 font-bold cursor-pointer language-mode"
             onClick={() => dispatch(toggleLang())}
           >
             {lang.abbreviation.toUpperCase()}
@@ -92,12 +92,12 @@ const Navbar: React.FC<{}> = (props) => {
           {/* THEME */}
           {theme.id === "dark" ? (
             <LightModeIcon
-              className="text-yellow-500 cursor-pointer"
+              className="text-yellow-500 cursor-pointer theme-calendar"
               onClick={() => dispatch(toggleTheme())}
             />
           ) : (
             <DarkModeIcon
-              className="text-red-700 cursor-pointer"
+              className="text-red-700 cursor-pointer theme-calendar"
               onClick={() => dispatch(toggleTheme())}
             />
           )}
