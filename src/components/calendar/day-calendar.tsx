@@ -14,6 +14,7 @@ import TodaySign from "./today-sign";
 import FullscreenOutlinedIcon from "@mui/icons-material/FullscreenOutlined";
 import { useState } from "react";
 import Marquee from "./marquee";
+import { blueGrey, grey, red } from "@mui/material/colors";
 
 const DayCalendar: React.FC<{
   dayCalendar: DayCalendarModel;
@@ -23,23 +24,57 @@ const DayCalendar: React.FC<{
     return props.dayCalendar.offDays && props.dayCalendar.offDays.length > 0;
   };
 
+  const isWorkDay = () => {
+    return props.dayCalendar.wfoTeam && props.dayCalendar.wfoTeam.length > 0;
+  };
+
   const getDayClass = () => {
-    const defaultClass = "relative rounded-lg m-1 transition-bg";
+    const defaultClass = {
+      position: "relative",
+      borderRadius: "5px",
+      margin: "5px",
+      backgroundColor: blueGrey[800],
+      color: grey[100],
+    };
 
     if (!isDateInMonth(props.dayCalendar.date, props.dayCalendar.month.order)) {
       if (isOffDay()) {
-        return `${defaultClass} bg-red-950 hover:bg-red-800 text-slate-200`;
+        return {
+          ...defaultClass,
+          backgroundColor: red[800],
+          color: grey[100],
+        };
       }
 
-      return `${defaultClass} bg-slate-200 hover:bg-slate-400 dark:hover:bg-slate-600 dark:bg-slate-800 text-slate-800 dark:text-slate-200`;
+      return {
+        ...defaultClass,
+        backgroundColor: blueGrey[800],
+        color: grey[100],
+      };
+    }
+
+    if (isWorkDay()) {
+      return {
+        ...defaultClass,
+        backgroundColor: red[800],
+        color: grey[800],
+      };
     }
 
     if (isOffDay()) {
-      return `${defaultClass} bg-red-800 hover:bg-red-600 text-slate-200`;
+      return {
+        ...defaultClass,
+        backgroundColor: red[800],
+        color: grey[100],
+      };
     }
 
     if (isWeekend(props.dayCalendar.date)) {
-      return `${defaultClass} bg-slate-300 hover:bg-slate-500 dark:bg-slate-700 text-slate-700 dark:text-slate-300 dark-hover`;
+      return {
+        ...defaultClass,
+        backgroundColor: blueGrey[500],
+        color: grey[100],
+      };
     }
 
     return defaultClass;
@@ -47,10 +82,11 @@ const DayCalendar: React.FC<{
 
   return (
     <Box
-      className={getDayClass()}
+      sx={getDayClass()}
       style={{
         aspectRatio: "1/1",
       }}
+      className="dark-hover"
     >
       {props.dayCalendar.wfhTeam && (
         <WfoCover
@@ -70,7 +106,16 @@ const DayCalendar: React.FC<{
           props.dayCalendar.month.order
         ) && <TodaySign />}
 
-      <Typography className="my-2 mx-3 font-bold font-caveat relative text-start">
+      <Typography
+        className="font-caveat"
+        sx={{
+          top: "10px",
+          left: "13px",
+          fontWeight: "bold",
+          position: "relative",
+          textAlign: "start",
+        }}
+      >
         {props.dayCalendar.date.get("date")}
       </Typography>
 
@@ -82,8 +127,15 @@ const DayCalendar: React.FC<{
       )}
 
       <FullscreenOutlinedIcon
-        className="cursor-pointer absolute right-2 top-2 hover:bg-white hover:text-slate-800 rounded-md calendar-detail"
+        className="calendar-detail"
         onClick={() => props.onDetail(props.dayCalendar)}
+        sx={{
+          cursor: "pointer",
+          position: "absolute",
+          right: "10px",
+          top: "10px",
+          borderRadius: "10px",
+        }}
       />
     </Box>
   );

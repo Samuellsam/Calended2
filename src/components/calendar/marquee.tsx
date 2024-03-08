@@ -21,19 +21,24 @@ const Marquee: React.FC<{
 
   return (
     <p
-      className="m-0 p-0 my-auto flex"
       style={{
         overflow: "hidden",
+        margin: "0",
+        padding: "0",
+        marginTop: "30px",
+        marginBottom: "auto",
+        display: "flex",
       }}
     >
       <small
         id={props.id}
-        className="font-caveat text-xl"
+        className="font-caveat"
         style={{
           display: "inline-block",
           textWrap: "nowrap",
           paddingLeft: "100%",
           animation: `marquee 10s linear infinite`,
+          fontSize: "20px",
         }}
       >
         {props.text[msgIdx]}

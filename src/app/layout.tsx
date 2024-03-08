@@ -8,6 +8,9 @@ import Navbar from "@/components/navbar/navbar";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import ThemeLayout from "./theme-layout";
 import LanguageLayout from "./language-layout";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { blueGrey } from "@mui/material/colors";
 
 export default function RootLayout({
   children,
@@ -15,23 +18,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full w-full bg-slate-100 dark:bg-slate-900">
+    <html
+      lang="en"
+      style={{
+        width: "100%",
+        height: "100%",
+        backgroundColor: blueGrey[900],
+      }}
+    >
       <head>
         <title>Calended | Minimalistic Work Calendar</title>
       </head>
-      <body className="select-none">
-        <Provider store={makeStore()}>
-          <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-            <ThemeLayout>
-              <LanguageLayout>
-                <Box className="bg-slate-100 dark:bg-slate-900 transition-bg">
-                  <Navbar />
-                  <Box className="pt-20 mx-10">{children}</Box>
-                </Box>
-              </LanguageLayout>
-            </ThemeLayout>
-          </AppRouterCacheProvider>
-        </Provider>
+      <body style={{ userSelect: "none" }}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <Provider store={makeStore()}>
+            <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+              <ThemeLayout>
+                <LanguageLayout>
+                  <Box
+                    className="transition-bg"
+                    sx={{ backgroundColor: blueGrey[900] }}
+                  >
+                    <Navbar />
+                    <Box sx={{ paddingTop: "100px", marginX: "10px" }}>
+                      {children}
+                    </Box>
+                  </Box>
+                </LanguageLayout>
+              </ThemeLayout>
+            </AppRouterCacheProvider>
+          </Provider>
+        </LocalizationProvider>
       </body>
     </html>
   );

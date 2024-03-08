@@ -9,22 +9,25 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Grid,
   Typography,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { DayCalendarModel, initDayCalendarModel } from "@/types/day-calendar";
 import { isWeekend, todayMonth, todayYear } from "@/utils/date-util";
-import TeamListItem from "../team/TeamListItem";
-import OffDayListTeam from "../off-day/OffDayListItem";
+import OffDayListItem from "../off-day/off-day-list-item";
 import {
   clearMonthlyCalendar,
   clearYearlyCalendar,
   fetchMonthlyCalendar,
   fetchYearlyCalendar,
 } from "@/lib/features/calendar/calendar-slice";
+import TeamListItem from "../team/team-list-item";
+import { blueGrey, grey } from "@mui/material/colors";
 
 const Calendar: React.FC<{}> = () => {
+  const theme = useSelector((state: RootState) => state.theme.selectedTheme);
   const dispatch: AppDispatch = useDispatch();
 
   const selectedMode = useSelector(
@@ -55,20 +58,31 @@ const Calendar: React.FC<{}> = () => {
   const getCalendar = () => {
     if (selectedMode.id === "month") {
       return (
-        <Box className="mb-24" key={months[todayMonth()].order}>
+        <Box
+          sx={{
+            marginBottom: "120px",
+          }}
+          key={months[todayMonth()].order}
+        >
           <MonthHeader month={months[month]} key={months[month].order} />
           {monthlyCalendar && monthlyCalendar.length > 0 ? (
-            <div className="grid grid-cols-7 gap-1 text-center">
+            <Grid container spacing={1}>
               {monthlyCalendar.map((c: DayCalendarModel, idx) => (
-                <DayCalendar
-                  dayCalendar={c}
-                  key={idx}
-                  onDetail={openDetailCalendar}
-                />
+                <Grid item xs={1.7} key={idx}>
+                  <DayCalendar dayCalendar={c} onDetail={openDetailCalendar} />
+                </Grid>
               ))}
-            </div>
+            </Grid>
           ) : (
-            <Typography className="my-5 font-bold font-caveat text-center text-white">
+            <Typography
+              className="font-caveat"
+              sx={{
+                marginY: "25px",
+                fontWeight: "bold",
+                textAlign: "center",
+                color: grey[100],
+              }}
+            >
               Loading...
             </Typography>
           )}
@@ -77,20 +91,31 @@ const Calendar: React.FC<{}> = () => {
     }
 
     return months.map((m) => (
-      <Box className="mb-24" key={m.order}>
+      <Box
+        sx={{
+          marginBottom: "120px",
+        }}
+        key={m.order}
+      >
         <MonthHeader month={m} key={m.order} />
         {yearlyCalendar && yearlyCalendar.length > 0 ? (
-          <div className="grid grid-cols-7 gap-1 text-center">
+          <Grid container spacing={1}>
             {yearlyCalendar[m.order - 1].map((c: DayCalendarModel, idx) => (
-              <DayCalendar
-                dayCalendar={c}
-                key={idx}
-                onDetail={openDetailCalendar}
-              />
+              <Grid item xs={1.7} key={idx}>
+                <DayCalendar dayCalendar={c} onDetail={openDetailCalendar} />
+              </Grid>
             ))}
-          </div>
+          </Grid>
         ) : (
-          <Typography className="my-5 font-bold font-caveat text-center text-white">
+          <Typography
+            className="font-caveat"
+            sx={{
+              marginY: "25px",
+              fontWeight: "bold",
+              textAlign: "center",
+              color: grey[100],
+            }}
+          >
             Loading...
           </Typography>
         )}
@@ -112,14 +137,18 @@ const Calendar: React.FC<{}> = () => {
   };
 
   const getTitle = () => {
-    let dayType = "Weekend 🎠";
+    let dayType = "Work Day 💻";
 
     if (isOffDay()) {
       dayType = "Off Day 🎉";
     }
 
-    if (isWorkDay()) {
-      dayType = "Work Day 💻";
+    if (
+      selectedCalendar &&
+      selectedCalendar.date &&
+      isWeekend(selectedCalendar.date)
+    ) {
+      dayType = "Weekend 🎠";
     }
 
     return `${selectedCalendar?.date.format(
@@ -132,14 +161,20 @@ const Calendar: React.FC<{}> = () => {
 
     if (isOffDay()) {
       return selectedCalendar.offDays.map((h) => (
-        <OffDayListTeam offDay={h} key={h.id}></OffDayListTeam>
+        <OffDayListItem offDay={h} key={h.id}></OffDayListItem>
       ));
     }
 
     if (isWorkDay()) {
       return (
         <>
-          <p className="font-bold">Work From Office</p>
+          <p
+            style={{
+              fontWeight: "bold",
+            }}
+          >
+            Work From Office
+          </p>
           {selectedCalendar.wfoTeam.map((t) => (
             <TeamListItem
               team={t}
@@ -149,7 +184,13 @@ const Calendar: React.FC<{}> = () => {
           <br />
           {selectedCalendar.wfhTeam && (
             <>
-              <p className="font-bold">Work From Home</p>
+              <p
+                style={{
+                  fontWeight: "bold",
+                }}
+              >
+                Work From Home
+              </p>
               <TeamListItem
                 team={selectedCalendar.wfhTeam}
                 key={`${selectedCalendar.wfhTeam.id}-${selectedCalendar.date}`}
@@ -163,7 +204,16 @@ const Calendar: React.FC<{}> = () => {
     if (isWeekend(selectedCalendar.date)) {
       return (
         <p
-          className={`font-caveat text-5xl text-center m-auto p-5 w-full transition-bg text-slate-800`}
+          className={`font-caveat transition-bg`}
+          style={{
+            fontSize: "3em",
+            textAlign: "center",
+            margin: "auto",
+            paddingTop: "20px",
+            paddingBottom: "20px",
+            width: "100%",
+            color: grey[100],
+          }}
         >
           Happy Weekend!! ✨
         </p>
@@ -172,17 +222,32 @@ const Calendar: React.FC<{}> = () => {
   };
 
   return (
-    <Box className="pb-1">
+    <Box
+      sx={{
+        paddingBottom: "5px",
+      }}
+    >
       {getCalendar()}
       <Dialog open={isOpen} keepMounted onClose={() => setIsOpen(false)}>
         <DialogTitle
-          className="font-bold bg-slate-200"
+          className="font-caveat"
           style={{ width: "500px" }}
+          sx={{
+            fontWeight: "bold",
+            backgroundColor: blueGrey[800],
+            color: grey[100],
+          }}
         >
           {getTitle()}
         </DialogTitle>
-        <DialogContent className="p-5">
-          <DialogContentText>{getDetail()}</DialogContentText>
+        <DialogContent
+          sx={{
+            padding: "25px",
+            backgroundColor: blueGrey[700],
+            color: grey[200],
+          }}
+        >
+          <DialogContentText color={"inherit"}>{getDetail()}</DialogContentText>
         </DialogContent>
       </Dialog>
     </Box>

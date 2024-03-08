@@ -3,6 +3,7 @@ import { toggleTheme } from "@/lib/features/themes/theme-slice";
 import { RootState } from "@/lib/store";
 import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightModeOutlined";
+import AppRegistrationIcon from "@mui/icons-material/AppRegistrationOutlined";
 import DarkModeIcon from "@mui/icons-material/DarkModeOutlined";
 import TodayOutlinedIcon from "@mui/icons-material/TodayOutlined";
 import StopOutlinedIcon from "@mui/icons-material/StopOutlined";
@@ -13,6 +14,9 @@ import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMode } from "@/lib/features/modes/mode-slice";
 import { setYear } from "@/lib/features/calendar/calendar-slice";
+import MainMenu from "../menu/main-menu";
+import { useState } from "react";
+import { blueGrey, grey, red, yellow } from "@mui/material/colors";
 
 const Navbar: React.FC<{}> = (props) => {
   const lang = useSelector((state: RootState) => state.language.selectedLang);
@@ -24,6 +28,8 @@ const Navbar: React.FC<{}> = (props) => {
 
   const dispatch = useDispatch();
 
+  const [openMenu, setOpenMenu] = useState(true);
+
   const scrollToToday = () => {
     document
       .getElementById("today-sign")
@@ -31,79 +37,176 @@ const Navbar: React.FC<{}> = (props) => {
   };
 
   return (
-    <AppBar position="fixed">
-      <Toolbar className="bg-slate-200 dark:bg-slate-800 transition-bg w-full">
-        {/* LOGO */}
-        <Box className="flex">
-          <Typography
-            variant="h5"
-            component="div"
-            className="font-bold mx-2 text-slate-800 dark:text-slate-200 font-rubik-doodle-shadow"
+    <>
+      <AppBar position="fixed">
+        <Toolbar
+          className="transition-bg"
+          sx={{
+            backgroundColor: blueGrey[800],
+            width: "100%",
+          }}
+        >
+          {/* LOGO */}
+          <Box
+            sx={{
+              display: "flex",
+            }}
           >
-            Calended2
-            <IconButton className="my-auto ml-1 prev-year-control">
-              <ArrowLeftIcon
+            <Typography
+              variant="h5"
+              component="div"
+              className="font-rubik-doodle-shadow"
+              sx={{
+                fontWeight: "bold",
+                marginX: "10px",
+                color: grey[100],
+              }}
+            >
+              Calended2
+              <IconButton
+                className="prev-year-control"
+                sx={{
+                  marginY: "auto",
+                  color: grey[100],
+                }}
                 onClick={() => dispatch(setYear({ year: year - 1 }))}
-              />
-            </IconButton>
-            <span className="text-red-700 dark:text-yellow-500">({year});</span>
-            <IconButton className="my-auto next-year-control">
-              <ArrowRightIcon
+              >
+                <ArrowLeftIcon />
+              </IconButton>
+              <span
+                style={{
+                  color: yellow[700],
+                }}
+              >
+                ({year});
+              </span>
+              <IconButton
+                className="next-year-control"
+                sx={{
+                  marginY: "auto",
+                  color: grey[100],
+                }}
                 onClick={() => dispatch(setYear({ year: year + 1 }))}
-              />
-            </IconButton>
-          </Typography>
-        </Box>
+              >
+                <ArrowRightIcon />
+              </IconButton>
+            </Typography>
+          </Box>
 
-        <Box className="ml-auto flex items-center">
-          {/* TODAY */}
-          <TodayOutlinedIcon
-            className="text-red-700 dark:text-yellow-500 cursor-pointer today-scroll"
-            onClick={() => scrollToToday()}
-          />
-
-          <div className="mx-2"></div>
-
-          {/* MODE */}
-          {mode.id === "month" ? (
-            <StopOutlinedIcon
-              className="text-red-700 dark:text-yellow-500 cursor-pointer calendar-mode"
-              onClick={() => dispatch(toggleMode())}
-            />
-          ) : (
-            <GridViewOutlinedIcon
-              className="text-red-700 dark:text-yellow-500 cursor-pointer calendar-mode"
-              onClick={() => dispatch(toggleMode())}
-            />
-          )}
-
-          <div className="mx-2"></div>
-
-          {/* LANGUAGE */}
-          <Typography
-            className="text-red-700 dark:text-yellow-500 font-bold cursor-pointer language-mode"
-            onClick={() => dispatch(toggleLang())}
+          <Box
+            sx={{
+              marginLeft: "auto",
+              display: "flex",
+              alignItems: "center",
+              paddingRight: "50px",
+            }}
           >
-            {lang.abbreviation.toUpperCase()}
-          </Typography>
-
-          <div className="mx-2"></div>
-
-          {/* THEME */}
-          {theme.id === "dark" ? (
-            <LightModeIcon
-              className="text-yellow-500 cursor-pointer theme-calendar"
-              onClick={() => dispatch(toggleTheme())}
+            {/* TODAY */}
+            <TodayOutlinedIcon
+              className="today-scroll"
+              onClick={() => scrollToToday()}
+              sx={{
+                color: yellow[700],
+                cursor: "pointer",
+              }}
             />
-          ) : (
-            <DarkModeIcon
-              className="text-red-700 cursor-pointer theme-calendar"
-              onClick={() => dispatch(toggleTheme())}
+
+            <div
+              style={{
+                marginLeft: "5px",
+                marginRight: "5px",
+              }}
+            ></div>
+
+            {/* MODE */}
+            {mode.id === "month" ? (
+              <StopOutlinedIcon
+                className="calendar-mode"
+                onClick={() => dispatch(toggleMode())}
+                sx={{
+                  color: yellow[700],
+                  cursor: "pointer",
+                }}
+              />
+            ) : (
+              <GridViewOutlinedIcon
+                className="calendar-mode"
+                onClick={() => dispatch(toggleMode())}
+                sx={{
+                  color: yellow[700],
+                  cursor: "pointer",
+                }}
+              />
+            )}
+
+            <div
+              style={{
+                marginLeft: "5px",
+                marginRight: "5px",
+              }}
+            ></div>
+
+            {/* LANGUAGE */}
+            <Typography
+              className="language-mode"
+              onClick={() => dispatch(toggleLang())}
+              sx={{
+                color: yellow[700],
+                cursor: "pointer",
+                fontWeight: "bold",
+              }}
+            >
+              {lang.abbreviation.toUpperCase()}
+            </Typography>
+
+            {/* <div
+              style={{
+                marginLeft: "5px",
+                marginRight: "5px",
+              }}
+            ></div> */}
+
+            {/* THEME */}
+            {/* {theme.id === "dark" ? (
+              <LightModeIcon
+                className="theme-calendar"
+                onClick={() => dispatch(toggleTheme())}
+                sx={{
+                  color: yellow[700],
+                  cursor: "pointer",
+                }}
+              />
+            ) : (
+              <DarkModeIcon
+                className="theme-calendar"
+                onClick={() => dispatch(toggleTheme())}
+                sx={{
+                  cursor: "pointer",
+                }}
+              />
+            )} */}
+
+            <div
+              style={{
+                marginLeft: "5px",
+                marginRight: "5px",
+              }}
+            ></div>
+
+            {/* MAIN MENU */}
+            <AppRegistrationIcon
+              onClick={() => setOpenMenu(!openMenu)}
+              sx={{
+                color: yellow[700],
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
             />
-          )}
-        </Box>
-      </Toolbar>
-    </AppBar>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <MainMenu open={openMenu} closeMenu={() => setOpenMenu(false)} />
+    </>
   );
 };
 

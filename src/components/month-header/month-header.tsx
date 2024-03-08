@@ -7,6 +7,7 @@ import { Button, IconButton, Typography } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import { setMonth } from "@/lib/features/calendar/calendar-slice";
+import { blueGrey, grey, yellow } from "@mui/material/colors";
 
 const MonthHeader: React.FC<{
   month: Month;
@@ -18,15 +19,31 @@ const MonthHeader: React.FC<{
 
   return (
     <Box>
-      <Box className="flex justify-between">
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
         <Typography
           variant="h6"
           component="p"
-          className="font-bold font-rubik-doodle-shadow"
+          className="font-rubik-doodle-shadow"
+          sx={{
+            fontWeight: "bold",
+          }}
         >
-          <span className="text-red-700 dark:text-yellow-500">
+          <span
+            style={{
+              color: yellow[700],
+            }}
+          >
             {`[' `}
-            <span className="text-slate-900 dark:text-slate-100">
+            <span
+              style={{
+                color: grey[100],
+              }}
+            >
               {props.month.name[lang.id] &&
                 props.month.name[lang.id].toUpperCase()}
             </span>
@@ -35,14 +52,43 @@ const MonthHeader: React.FC<{
         </Typography>
 
         {mode.id === "month" && (
-          <Box className="flex">
-            <Button className="my-auto bg-slate-200 text-slate-800 w-min prev-month-control">
+          <Box
+            sx={{
+              display: "flex",
+            }}
+          >
+            <Button
+              className="prev-month-control"
+              sx={{
+                marginY: "auto",
+                backgroundColor: blueGrey[100],
+                color: grey[800],
+                ":hover": {
+                  backgroundColor: blueGrey[100],
+                },
+              }}
+            >
               <ArrowLeftIcon
                 onClick={() => dispatch(setMonth({ month: month - 1 }))}
               />
             </Button>
-            <div className="mx-1"></div>
-            <Button className="my-auto bg-slate-200 text-slate-800 w-min next-month-control">
+            <div
+              style={{
+                marginLeft: "5px",
+                marginRight: "5px",
+              }}
+            ></div>
+            <Button
+              className="next-month-control"
+              sx={{
+                marginY: "auto",
+                backgroundColor: blueGrey[100],
+                color: grey[800],
+                ":hover": {
+                  backgroundColor: blueGrey[100],
+                },
+              }}
+            >
               <ArrowRightIcon
                 onClick={() => dispatch(setMonth({ month: month + 1 }))}
               />
@@ -51,7 +97,12 @@ const MonthHeader: React.FC<{
         )}
       </Box>
 
-      <div className="my-2" />
+      <div
+        style={{
+          marginTop: "10px",
+          marginBottom: "10px",
+        }}
+      />
 
       <DayInWeekHeader />
     </Box>

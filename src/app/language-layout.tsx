@@ -8,6 +8,7 @@ import {
   LANG_LOCAL_STORAGE_KEY,
   setLang,
 } from "@/lib/features/languages/language-slice";
+import { Box } from "@mui/material";
 
 export default function LanguageLayout({
   children,
@@ -30,5 +31,18 @@ export default function LanguageLayout({
     setIsLoading(false);
   }, []);
 
-  return <>{!isLoading && <div className="h-full w-full">{children}</div>}</>;
+  return (
+    <>
+      {!isLoading && (
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          {children}
+        </Box>
+      )}
+    </>
+  );
 }

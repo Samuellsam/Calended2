@@ -1,10 +1,34 @@
+import { grey } from "@mui/material/colors";
+
 const TodaySign: React.FC<{}> = (props) => {
   return (
     <div
       id="today-sign"
-      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg transition-bg w-full h-full flex border-4 border-slate-800 dark:border-slate-100 dark-hover"
+      className="transition-bg"
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        borderRadius: "10px",
+        display: "flex",
+        width: "100%",
+        height: "100%",
+        transform: "translate(-50%, -50%)",
+        border: `5px solid ${grey[100]}`,
+        textAlign: "center",
+      }}
     >
-      <p className="text-slate-100 dark:text-slate-800 bg-slate-800 dark:bg-slate-100 font-caveat h-min mt-auto w-full transition-bg">
+      <p
+        className="font-caveat transition-bg"
+        style={{
+          color: grey[800],
+          backgroundColor: grey[100],
+          marginTop: "auto",
+          marginBottom: "-1px",
+          width: "100%",
+          height: "min-content",
+        }}
+      >
         Today
       </p>
     </div>

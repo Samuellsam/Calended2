@@ -1,6 +1,7 @@
 import { RootState } from "@/lib/store";
 import { useSelector } from "react-redux";
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
+import { blueGrey, grey } from "@mui/material/colors";
 
 const DayInWeekHeader: React.FC = () => {
   const lang = useSelector((state: RootState) => state.language.selectedLang);
@@ -8,18 +9,29 @@ const DayInWeekHeader: React.FC = () => {
 
   return (
     <>
-      <div className="grid grid-cols-7 gap-1">
+      <Grid container spacing={1}>
         {daysInWeek.map((d) => (
-          <Typography
-            component="span"
-            className="font-bold px-2 font-rubik-doodle-shadow text-slate-900 dark:text-slate-100"
-            key={d.order}
-          >
-            {d.abbreviation[lang.id] && d.abbreviation[lang.id].toUpperCase()}
-          </Typography>
+          <Grid item xs={1.7} key={d.order}>
+            <Typography
+              component="span"
+              className="font-rubik-doodle-shadow"
+              sx={{
+                fontWeight: "bold",
+                paddingX: "10px",
+                color: grey[100],
+              }}
+            >
+              {d.abbreviation[lang.id] && d.abbreviation[lang.id].toUpperCase()}
+            </Typography>
+          </Grid>
         ))}
-      </div>
-      <hr className="border border-slate-900 dark:border-slate-100" />
+        <hr
+          style={{
+            color: grey[100],
+            width: "100%",
+          }}
+        />
+      </Grid>
     </>
   );
 };

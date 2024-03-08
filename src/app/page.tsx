@@ -1,6 +1,6 @@
 "use client";
 
-import { Box } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import Calendar from "@/components/calendar/calendar";
 import "shepherd.js/dist/css/shepherd.css";
 import { ShepherdOptionsWithType, useShepherdTour } from "react-shepherd";
@@ -23,13 +23,16 @@ const HomePage: React.FC<{}> = () => {
   });
 
   useEffect(() => {
-    tour.start();
+    // tour.start();
   }, []);
 
   return (
-    <Box className="pb-1">
-      <p className="calendar">Calendar</p>
-      <Calendar />
+    <Box
+      sx={{
+        paddingBottom: "5px",
+      }}
+    >
+      {/* {<Calendar />} */}
     </Box>
   );
 };

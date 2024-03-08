@@ -35,7 +35,12 @@ export default function ThemeLayout({
   return (
     <>
       {!isLoading && (
-        <div className={`h-full w-full ${theme.id === "dark" ? "dark" : ""}`}>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+        >
           {children}
         </div>
       )}

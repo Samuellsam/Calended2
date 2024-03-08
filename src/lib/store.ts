@@ -5,6 +5,7 @@ import languageReducer from "./features/languages/language-slice";
 import themeReducer from "./features/themes/theme-slice";
 import modeReducer from "./features/modes/mode-slice";
 import calendarReducer from "./features/calendar/calendar-slice";
+import teamReducer from "./features/team/team-slice";
 import { thunk } from "redux-thunk";
 
 export const makeStore = () => {
@@ -16,6 +17,7 @@ export const makeStore = () => {
       language: languageReducer,
       theme: themeReducer,
       mode: modeReducer,
+      team: teamReducer,
     },
   });
 };

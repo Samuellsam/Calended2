@@ -1,4 +1,5 @@
 import { Team } from "@/types/team";
+import { grey } from "@mui/material/colors";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -17,18 +18,30 @@ const WfoCover: React.FC<{
 
   return (
     <div
-      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg transition-bg h-full w-full flex dark-hover"
+      className="transition-bg dark-hover"
       style={{
         aspectRatio: "1/1",
         background: props.mode === "colorful" ? props.wfhTeam?.color : "",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        borderRadius: "5px",
+        display: "flex",
+        width: "100%",
+        height: "100%",
+        transform: "translate(-50%, -50%)",
       }}
     >
       <p
-        className={`font-caveat text-5xl m-auto p-1 w-full transition-bg ${
-          props.mode === "colorful"
-            ? "text-slate-800"
-            : "text-slate-800 dark:text-slate-200"
-        }`}
+        className="font-caveat transition-bg"
+        style={{
+          color: props.mode === "colorful" ? grey[800] : grey[100],
+          width: "100%",
+          padding: "5px",
+          margin: "auto",
+          fontSize: "3em",
+          textAlign: "center",
+        }}
       >
         {getWfoTeamString()}
       </p>

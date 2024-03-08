@@ -17,8 +17,8 @@ const steps: ShepherdOptionsWithType[] = [
     ],
     classes: "tour-dialog",
     title: `
-    <div class="font-caveat text-5xl">
-      <p class="text-white">Welcome to Calended2!</p>
+    <div>
+      <p class="font-caveat tour-title">Welcome to Calended2!</p>
     </div>
     `,
     text: [
@@ -185,37 +185,37 @@ const steps: ShepherdOptionsWithType[] = [
       enabled: false,
     },
   },
-  {
-    id: "calendarTheme",
-    buttons: [
-      {
-        classes: "tour-btn-secondary",
-        text: "EXIT",
-        type: "cancel",
-      },
-      {
-        classes: "tour-btn-primary",
-        text: "PREV",
-        type: "back",
-      },
-      {
-        classes: "tour-btn-primary",
-        text: "NEXT",
-        type: "next",
-      },
-    ],
-    classes: "tour-dialog",
-    attachTo: {
-      element: ".theme-calendar",
-      on: "bottom",
-    },
-    text: [
-      "You can use this button to change theme for the calendar, 'Dark' or 'Light' mode",
-    ],
-    cancelIcon: {
-      enabled: false,
-    },
-  },
+  // {
+  //   id: "calendarTheme",
+  //   buttons: [
+  //     {
+  //       classes: "tour-btn-secondary",
+  //       text: "EXIT",
+  //       type: "cancel",
+  //     },
+  //     {
+  //       classes: "tour-btn-primary",
+  //       text: "PREV",
+  //       type: "back",
+  //     },
+  //     {
+  //       classes: "tour-btn-primary",
+  //       text: "NEXT",
+  //       type: "next",
+  //     },
+  //   ],
+  //   classes: "tour-dialog",
+  //   attachTo: {
+  //     element: ".theme-calendar",
+  //     on: "bottom",
+  //   },
+  //   text: [
+  //     "You can use this button to change theme for the calendar, 'Dark' or 'Light' mode",
+  //   ],
+  //   cancelIcon: {
+  //     enabled: false,
+  //   },
+  // },
   {
     id: "prevMonth",
     buttons: [
