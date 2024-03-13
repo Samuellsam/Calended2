@@ -8,7 +8,7 @@ const FormTemplate: React.FC<{ children: React.ReactNode; title: string }> = (
     <Box
       sx={{
         height: "100%",
-        backgroundColor: grey[100],
+        backgroundColor: blueGrey[800],
         padding: "25px",
         display: "flex",
         flexDirection: "column",
@@ -20,24 +20,26 @@ const FormTemplate: React.FC<{ children: React.ReactNode; title: string }> = (
           sx={{
             fontWeight: "bold",
             color: yellow[700],
+            marginBottom: "10px",
           }}
-          variant="h5"
+          variant="h4"
+          className="font-caveat"
         >
           {props.title}
         </Typography>
-        <hr style={{ border: `1px solid ${yellow[700]}` }} />
         <Grid container>{props.children}</Grid>
       </Box>
       <Button
         variant="contained"
+        className="font-caveat"
         sx={{
           marginLeft: "auto",
-          marginRight: "10px",
-          marginTop: "25px",
+          marginTop: "10px",
           backgroundColor: yellow[700],
           ":hover": {
             backgroundColor: yellow[700],
           },
+          color: "black",
         }}
       >
         Save

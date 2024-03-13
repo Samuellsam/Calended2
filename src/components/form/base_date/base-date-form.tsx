@@ -35,10 +35,10 @@ const BaseDateForm: React.FC<{}> = (props) => {
 
   return (
     <FormTemplate title="Base Date">
-      <FormRow label="base date" color="1">
+      <FormRow label="base date" colored required>
         <DatePicker sx={{ width: "100%" }} />
       </FormRow>
-      <FormRow label="team" color="2">
+      <FormRow label="team" required>
         <Select color="primary" sx={{ width: "100%" }}>
           {teamOptions.map((option) => (
             <MenuItem key={option.id} value={option.id}>

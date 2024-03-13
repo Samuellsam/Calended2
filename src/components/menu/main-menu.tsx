@@ -26,6 +26,7 @@ import ChevronLeftOutlinedIcon from "@mui/icons-material/ChevronLeftOutlined";
 import { TransitionProps } from "@mui/material/transitions";
 import BaseDateForm from "../form/base_date/base-date-form";
 import { blueGrey, grey, yellow } from "@mui/material/colors";
+import { Menu } from "@/types/menu";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -43,7 +44,7 @@ const MainMenu: React.FC<{
   const theme = useSelector((state: RootState) => state.theme.selectedTheme);
   const lang = useSelector((state: RootState) => state.language.selectedLang);
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [selectedMenu, setSelectedMenu] = useState("");
+  const [selectedMenu, setSelectedMenu] = useState<Menu>(MENU_LISTS[0]);
 
   return (
     <Dialog
@@ -136,17 +137,17 @@ const MainMenu: React.FC<{
                 sx={{
                   aspectRatio: "4/1",
                   width: "200px",
-                  color: m.id === selectedMenu ? blueGrey[800] : yellow[700],
+                  color: m.id === selectedMenu.id ? blueGrey[800] : yellow[700],
                   textAlign: "center",
                   display: "flex",
                   margin: "10px",
                   cursor: "pointer",
                   borderRadius: "5px",
                   backgroundColor:
-                    m.id === selectedMenu ? yellow[700] : blueGrey[800],
+                    m.id === selectedMenu.id ? yellow[700] : blueGrey[800],
                 }}
                 onClick={() => {
-                  setSelectedMenu(m.id);
+                  setSelectedMenu(m);
                 }}
               >
                 <p
@@ -156,7 +157,7 @@ const MainMenu: React.FC<{
                     fontWeight: "bold",
                   }}
                 >
-                  {m.id === selectedMenu
+                  {m.id === selectedMenu.id
                     ? `<< ${m.name[lang.id]} >>`
                     : m.name[lang.id]}
                 </p>
@@ -169,7 +170,7 @@ const MainMenu: React.FC<{
             height: "100%",
           }}
         >
-          <BaseDateForm />
+          {selectedMenu.name.en == "Base Date" && <BaseDateForm />}
         </Box>
       </Box>
     </Dialog>
