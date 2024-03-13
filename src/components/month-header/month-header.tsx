@@ -67,10 +67,9 @@ const MonthHeader: React.FC<{
                   backgroundColor: blueGrey[100],
                 },
               }}
+              onClick={() => dispatch(setMonth({ month: month - 1 }))}
             >
-              <ArrowLeftIcon
-                onClick={() => dispatch(setMonth({ month: month - 1 }))}
-              />
+              <ArrowLeftIcon />
             </Button>
             <div
               style={{
@@ -88,10 +87,9 @@ const MonthHeader: React.FC<{
                   backgroundColor: blueGrey[100],
                 },
               }}
+              onClick={() => dispatch(setMonth({ month: month + 1 }))}
             >
-              <ArrowRightIcon
-                onClick={() => dispatch(setMonth({ month: month + 1 }))}
-              />
+              <ArrowRightIcon />
             </Button>
           </Box>
         )}

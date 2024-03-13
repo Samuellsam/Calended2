@@ -17,7 +17,7 @@ const MemberListItem: React.FC<{
       }
       arrow
     >
-      <small style={{ color: blue[400] }}>{props.member.name}</small>
+      <small style={{ color: blue[900] }}>{props.member.name}</small>
     </Tooltip>
   );
 };
