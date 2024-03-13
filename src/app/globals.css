@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("./form.css");
 @import url("./tour.css");
 
 @font-face {
