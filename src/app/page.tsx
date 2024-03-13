@@ -23,7 +23,7 @@ const HomePage: React.FC<{}> = () => {
   });
 
   useEffect(() => {
-    // tour.start();
+    tour.start();
   }, []);
 
   return (
@@ -32,7 +32,7 @@ const HomePage: React.FC<{}> = () => {
         paddingBottom: "5px",
       }}
     >
-      {/* {<Calendar />} */}
+      <Calendar />
     </Box>
   );
 };

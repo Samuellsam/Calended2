@@ -28,7 +28,7 @@ const Navbar: React.FC<{}> = (props) => {
 
   const dispatch = useDispatch();
 
-  const [openMenu, setOpenMenu] = useState(true);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const scrollToToday = () => {
     document
