@@ -8,7 +8,7 @@ import Navbar from "@/components/navbar/navbar";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import ThemeLayout from "./theme-layout";
 import LanguageLayout from "./language-layout";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { blueGrey } from "@mui/material/colors";
 
@@ -30,7 +30,7 @@ export default function RootLayout({
         <title>Calended | Minimalistic Work Calendar</title>
       </head>
       <body style={{ userSelect: "none" }}>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <LocalizationProvider dateAdapter={AdapterMoment}>
           <Provider store={makeStore()}>
             <AppRouterCacheProvider options={{ enableCssLayer: true }}>
               <ThemeLayout>

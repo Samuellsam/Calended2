@@ -1,9 +1,11 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { blueGrey, grey, yellow } from "@mui/material/colors";
 
-const FormTemplate: React.FC<{ children: React.ReactNode; title: string }> = (
-  props
-) => {
+const FormTemplate: React.FC<{
+  children: React.ReactNode;
+  title: string;
+  onSubmit: () => void;
+}> = (props) => {
   return (
     <Box
       sx={{
@@ -41,6 +43,7 @@ const FormTemplate: React.FC<{ children: React.ReactNode; title: string }> = (
           },
           color: "black",
         }}
+        onClick={() => props.onSubmit()}
       >
         Save
       </Button>
