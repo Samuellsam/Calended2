@@ -21,4 +21,19 @@ export class BaseDateRepository {
   find = async (): Promise<BaseDate | null> => {
     return await this.read();
   };
+
+  set = async (newbaseDate: string, newTeamId: string): Promise<Boolean> => {
+    try {
+      db.update(({ baseDate }) => {
+        if (baseDate) {
+          baseDate.date = newbaseDate;
+          baseDate.wfhTeamId = newTeamId;
+        }
+      });
+
+      return true;
+    } catch (error) {}
+
+    return false;
+  };
 }
