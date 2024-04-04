@@ -23,7 +23,7 @@ const HomePage: React.FC<{}> = () => {
   });
 
   useEffect(() => {
-    // tour.start();
+    tour.start();
   }, []);
 
   return (
