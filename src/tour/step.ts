@@ -185,6 +185,95 @@ const steps: ShepherdOptionsWithType[] = [
       enabled: false,
     },
   },
+  {
+    id: "refresh",
+    buttons: [
+      {
+        classes: "tour-btn-secondary",
+        text: "EXIT",
+        type: "cancel",
+      },
+      {
+        classes: "tour-btn-primary",
+        text: "PREV",
+        type: "back",
+      },
+      {
+        classes: "tour-btn-primary",
+        text: "NEXT",
+        type: "next",
+      },
+    ],
+    classes: "tour-dialog",
+    attachTo: {
+      element: ".refresh",
+      on: "bottom",
+    },
+    text: [
+      "You can use this button to refresh calendar (need to do it after change config)",
+    ],
+    cancelIcon: {
+      enabled: false,
+    },
+  },
+  {
+    id: "downloadConfig",
+    buttons: [
+      {
+        classes: "tour-btn-secondary",
+        text: "EXIT",
+        type: "cancel",
+      },
+      {
+        classes: "tour-btn-primary",
+        text: "PREV",
+        type: "back",
+      },
+      {
+        classes: "tour-btn-primary",
+        text: "NEXT",
+        type: "next",
+      },
+    ],
+    classes: "tour-dialog",
+    attachTo: {
+      element: ".download_config",
+      on: "bottom",
+    },
+    text: ["You can use this button to download existing config"],
+    cancelIcon: {
+      enabled: false,
+    },
+  },
+  {
+    id: "adminMenu",
+    buttons: [
+      {
+        classes: "tour-btn-secondary",
+        text: "EXIT",
+        type: "cancel",
+      },
+      {
+        classes: "tour-btn-primary",
+        text: "PREV",
+        type: "back",
+      },
+      {
+        classes: "tour-btn-primary",
+        text: "NEXT",
+        type: "next",
+      },
+    ],
+    classes: "tour-dialog",
+    attachTo: {
+      element: ".admin",
+      on: "bottom",
+    },
+    text: ["You can use this button to open admin menu"],
+    cancelIcon: {
+      enabled: false,
+    },
+  },
   // {
   //   id: "calendarTheme",
   //   buttons: [

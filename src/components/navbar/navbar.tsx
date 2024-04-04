@@ -217,6 +217,7 @@ const Navbar: React.FC<{}> = (props) => {
 
             {/* REFRESH */}
             <RefreshIcon
+              className="refresh"
               onClick={() => {
                 dispatch(toggleRefresh());
               }}
@@ -236,6 +237,7 @@ const Navbar: React.FC<{}> = (props) => {
 
             {/* DOWNLOAD CONFIG */}
             <FileDownloadIcon
+              className="download_config"
               onClick={() => downloadConfig()}
               sx={{
                 color: yellow[700],
@@ -253,6 +255,7 @@ const Navbar: React.FC<{}> = (props) => {
 
             {/* MAIN MENU */}
             <AppRegistrationIcon
+              className="admin"
               onClick={() => setOpenMenu(!openMenu)}
               sx={{
                 color: yellow[700],
