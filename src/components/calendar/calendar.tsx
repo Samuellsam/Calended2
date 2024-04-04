@@ -37,6 +37,7 @@ const Calendar: React.FC<{}> = () => {
 
   const year = useSelector((state: RootState) => state.calendar.year);
   const month = useSelector((state: RootState) => state.calendar.month);
+  const refresh = useSelector((state: RootState) => state.calendar.refresh);
 
   const yearlyCalendar = useSelector(
     (state: RootState) => state.calendar.yearlyCalendar
@@ -53,7 +54,7 @@ const Calendar: React.FC<{}> = () => {
     dispatch(clearYearlyCalendar());
     dispatch(fetchMonthlyCalendar({ month: month + 1, year }));
     dispatch(fetchYearlyCalendar({ year }));
-  }, [year, month]);
+  }, [year, month, refresh]);
 
   const getCalendar = () => {
     if (selectedMode.id === "month") {

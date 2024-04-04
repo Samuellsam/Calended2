@@ -17,4 +17,8 @@ export const MENU_LISTS: Menu[] = [
     id: "a5c5d6a5-ebb3-4f91-9f46-e705cea67969",
     name: { id: "Libur/Cuti Bersama", en: "Off Day" },
   },
+  {
+    id: "d2ab555d-b49f-4efa-9dcb-8ded9d3e0931",
+    name: { id: "Unggah Konfigurasi", en: "Upload Config" },
+  },
 ];

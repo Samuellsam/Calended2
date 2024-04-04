@@ -9,6 +9,7 @@ import {
   THEME_LOCAL_STORAGE_KEY,
   setTheme,
 } from "@/lib/features/themes/theme-slice";
+import { blueGrey } from "@mui/material/colors";
 
 export default function ThemeLayout({
   children,

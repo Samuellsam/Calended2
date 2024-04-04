@@ -1,11 +1,16 @@
-import { Snackbar, TextField } from "@mui/material";
+import { Box, Drawer, Grid, Snackbar, TextField } from "@mui/material";
 import FormTemplate from "@/components/template/form-template";
 import FormRow from "@/components/template/form-row";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Formik, FormikHelpers } from "formik";
 import TeamController from "@/controllers/TeamController";
 import axios, { isAxiosError } from "axios";
 import { SnackBarModel } from "@/types/snackbar";
+import TeamListItem from "@/components/team/team-list-item";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/lib/store";
+import { fetchTeam } from "@/lib/features/team/team-slice";
+import { blueGrey } from "@mui/material/colors";
 
 export interface TeamFormModel {
   name: string;
@@ -13,6 +18,10 @@ export interface TeamFormModel {
 }
 
 const TeamForm: React.FC<{}> = (props) => {
+  const dispatch: AppDispatch = useDispatch();
+  const team = useSelector((state: RootState) => state.team.teams);
+
+  const [formDrawer, setFormDrawer] = useState<boolean>(false);
   const [form, setForm] = useState<TeamFormModel>({
     name: "",
     color: "#000000",
@@ -22,6 +31,10 @@ const TeamForm: React.FC<{}> = (props) => {
     message: "",
     autoHide: 5,
   });
+
+  useEffect(() => {
+    dispatch(fetchTeam());
+  }, []);
 
   const onValidate = (values: TeamFormModel) => {
     const errors: any = {};
@@ -53,6 +66,8 @@ const TeamForm: React.FC<{}> = (props) => {
         isOpen: true,
         message: "Successfully add new team",
       });
+
+      dispatch(fetchTeam());
     } catch (error) {
       if (isAxiosError(error)) {
         setSnackBarModel({
@@ -93,7 +108,7 @@ const TeamForm: React.FC<{}> = (props) => {
               <TextField
                 name="color"
                 variant="outlined"
-                sx={{ width: "10%", marginRight: "10px" }}
+                sx={{ width: "30%", marginRight: "10px" }}
                 type="color"
                 onChange={handleChange}
                 onBlur={handleBlur}

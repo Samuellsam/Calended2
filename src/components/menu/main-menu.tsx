@@ -18,7 +18,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -30,6 +30,8 @@ import { Menu } from "@/types/menu";
 import TeamForm from "../form/team/team-form";
 import MemberForm from "../form/member/member-form";
 import OffDayForm from "../form/off-day/off-day-form";
+import TeamAdmin from "../admin/team-admin";
+import UploadConfigForm from "../form/config/upload-config-form";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -47,7 +49,7 @@ const MainMenu: React.FC<{
   const theme = useSelector((state: RootState) => state.theme.selectedTheme);
   const lang = useSelector((state: RootState) => state.language.selectedLang);
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [selectedMenu, setSelectedMenu] = useState<Menu>(MENU_LISTS[0]);
+  const [selectedMenu, setSelectedMenu] = useState<Menu | undefined>();
 
   return (
     <Dialog
@@ -140,14 +142,15 @@ const MainMenu: React.FC<{
                 sx={{
                   aspectRatio: "4/1",
                   width: "200px",
-                  color: m.id === selectedMenu.id ? blueGrey[800] : yellow[700],
+                  color:
+                    m.id === selectedMenu?.id ? blueGrey[800] : yellow[700],
                   textAlign: "center",
                   display: "flex",
                   margin: "10px",
                   cursor: "pointer",
                   borderRadius: "5px",
                   backgroundColor:
-                    m.id === selectedMenu.id ? yellow[700] : blueGrey[800],
+                    m.id === selectedMenu?.id ? yellow[700] : blueGrey[800],
                 }}
                 onClick={() => {
                   setSelectedMenu(m);
@@ -160,7 +163,7 @@ const MainMenu: React.FC<{
                     fontWeight: "bold",
                   }}
                 >
-                  {m.id === selectedMenu.id
+                  {m.id === selectedMenu?.id
                     ? `<< ${m.name[lang.id]} >>`
                     : m.name[lang.id]}
                 </p>
@@ -173,10 +176,31 @@ const MainMenu: React.FC<{
             height: "100%",
           }}
         >
-          {selectedMenu.name.en == "Base Date" && <BaseDateForm />}
-          {selectedMenu.name.en == "Team" && <TeamForm />}
-          {selectedMenu.name.en == "Member" && <MemberForm />}
-          {selectedMenu.name.en == "Off Day" && <OffDayForm />}
+          {!selectedMenu && (
+            <Box
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%,-50%)",
+                textAlign: "center",
+              }}
+            >
+              <Typography variant="h1">
+                {/* {`(ᗒᗣᗕ)՞`} */}
+                🐳
+              </Typography>
+              <br />
+              <Typography variant="h6" className="font-caveat">
+                Please select some menu first
+              </Typography>
+            </Box>
+          )}
+          {selectedMenu?.name.en == "Team" && <TeamForm />}
+          {selectedMenu?.name.en == "Base Date" && <BaseDateForm />}
+          {selectedMenu?.name.en == "Member" && <MemberForm />}
+          {selectedMenu?.name.en == "Off Day" && <OffDayForm />}
+          {selectedMenu?.name.en == "Upload Config" && <UploadConfigForm />}
         </Box>
       </Box>
     </Dialog>

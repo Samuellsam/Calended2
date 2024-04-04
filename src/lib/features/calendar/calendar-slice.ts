@@ -8,11 +8,13 @@ const initialState: {
   monthlyCalendar: DayCalendarModel[];
   year: number;
   month: number;
+  refresh: boolean;
 } = {
   yearlyCalendar: [],
   monthlyCalendar: [],
   year: todayYear(),
   month: todayMonth(),
+  refresh: false,
 };
 
 export const calendarSlice = createSlice({
@@ -35,6 +37,9 @@ export const calendarSlice = createSlice({
     },
     clearYearlyCalendar: (state) => {
       state.yearlyCalendar = [];
+    },
+    toggleRefresh: (state) => {
+      state.refresh = !state.refresh;
     },
   },
   extraReducers: (builder) => {
@@ -84,7 +89,12 @@ export const fetchYearlyCalendar = createAsyncThunk(
   }
 );
 
-export const { setYear, setMonth, clearMonthlyCalendar, clearYearlyCalendar } =
-  calendarSlice.actions;
+export const {
+  setYear,
+  setMonth,
+  clearMonthlyCalendar,
+  clearYearlyCalendar,
+  toggleRefresh,
+} = calendarSlice.actions;
 
 export default calendarSlice.reducer;

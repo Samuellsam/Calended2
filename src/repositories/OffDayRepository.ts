@@ -32,7 +32,7 @@ export class OffDayRepository {
     newFrom: string,
     newTo: string,
     newName: string,
-    newType: OffDayType
+    newType: string
   ): Promise<Boolean> => {
     try {
       await db.update(({ offDays }) =>
@@ -41,7 +41,7 @@ export class OffDayRepository {
           from: newFrom,
           name: newName,
           to: newTo,
-          type: newType,
+          type: newType as string,
         })
       );
 

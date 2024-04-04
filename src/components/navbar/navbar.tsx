@@ -1,22 +1,29 @@
 import { toggleLang } from "@/lib/features/languages/language-slice";
-import { toggleTheme } from "@/lib/features/themes/theme-slice";
 import { RootState } from "@/lib/store";
-import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
-import LightModeIcon from "@mui/icons-material/LightModeOutlined";
+import {
+  AppBar,
+  Box,
+  Dialog,
+  IconButton,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistrationOutlined";
-import DarkModeIcon from "@mui/icons-material/DarkModeOutlined";
 import TodayOutlinedIcon from "@mui/icons-material/TodayOutlined";
 import StopOutlinedIcon from "@mui/icons-material/StopOutlined";
+import RefreshIcon from "@mui/icons-material/Refresh";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
+import FileUploadIcon from "@mui/icons-material/FileUpload";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
-import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMode } from "@/lib/features/modes/mode-slice";
-import { setYear } from "@/lib/features/calendar/calendar-slice";
+import { setYear, toggleRefresh } from "@/lib/features/calendar/calendar-slice";
 import MainMenu from "../menu/main-menu";
 import { useState } from "react";
 import { blueGrey, grey, red, yellow } from "@mui/material/colors";
+import axios from "axios";
 
 const Navbar: React.FC<{}> = (props) => {
   const lang = useSelector((state: RootState) => state.language.selectedLang);
@@ -35,6 +42,21 @@ const Navbar: React.FC<{}> = (props) => {
       .getElementById("today-sign")
       ?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const downloadConfig = async () => {
+    const response = await axios.get("/api/config");
+
+    const a = document.createElement("a");
+    a.style.display = "none";
+    a.href = `data:text/plain;charset=utf-8,${encodeURIComponent(
+      response.data.config
+    )}`;
+    a.download = "db.json";
+    document.body.appendChild(a);
+    a.click();
+  };
+
+  const uploadConfig = async () => {};
 
   return (
     <>
@@ -185,6 +207,42 @@ const Navbar: React.FC<{}> = (props) => {
                 }}
               />
             )} */}
+
+            <div
+              style={{
+                marginLeft: "5px",
+                marginRight: "5px",
+              }}
+            ></div>
+
+            {/* REFRESH */}
+            <RefreshIcon
+              onClick={() => {
+                dispatch(toggleRefresh());
+              }}
+              sx={{
+                color: yellow[700],
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+            />
+
+            <div
+              style={{
+                marginLeft: "5px",
+                marginRight: "5px",
+              }}
+            ></div>
+
+            {/* DOWNLOAD CONFIG */}
+            <FileDownloadIcon
+              onClick={() => downloadConfig()}
+              sx={{
+                color: yellow[700],
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+            />
 
             <div
               style={{

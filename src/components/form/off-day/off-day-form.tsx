@@ -22,12 +22,13 @@ import dayjs, { Dayjs } from "dayjs";
 import axios, { isAxiosError } from "axios";
 import { SnackBarModel } from "@/types/snackbar";
 import { Option } from "@/types/option";
+import { OffDayType } from "@/types/off-day";
 
 export interface OffDayFormModel {
   from: string;
   to: string;
   name: string;
-  type: string;
+  type: OffDayType;
 }
 
 const OffDayForm: React.FC<{}> = (props) => {
@@ -47,7 +48,7 @@ const OffDayForm: React.FC<{}> = (props) => {
     from: "",
     to: "",
     name: "",
-    type: "",
+    type: "holiday",
   });
 
   const [snackbar, setSnackBarModel] = useState<SnackBarModel>({
