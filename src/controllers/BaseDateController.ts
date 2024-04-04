@@ -24,7 +24,7 @@ export default class BaseDateController {
     try {
       const data = await req.json();
 
-      this.baseDateRepository.set(data.baseDate, data.teamId);
+      await this.baseDateRepository.set(data.baseDate, data.teamId);
 
       return Response.json({
         success: true,

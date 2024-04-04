@@ -28,6 +28,8 @@ import BaseDateForm from "../form/base_date/base-date-form";
 import { blueGrey, grey, yellow } from "@mui/material/colors";
 import { Menu } from "@/types/menu";
 import TeamForm from "../form/team/team-form";
+import MemberForm from "../form/member/member-form";
+import OffDayForm from "../form/off-day/off-day-form";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -173,6 +175,8 @@ const MainMenu: React.FC<{
         >
           {selectedMenu.name.en == "Base Date" && <BaseDateForm />}
           {selectedMenu.name.en == "Team" && <TeamForm />}
+          {selectedMenu.name.en == "Member" && <MemberForm />}
+          {selectedMenu.name.en == "Off Day" && <OffDayForm />}
         </Box>
       </Box>
     </Dialog>

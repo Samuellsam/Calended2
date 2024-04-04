@@ -1,6 +1,7 @@
 import { OffDay, OffDayType } from "@/types/off-day";
 import db from "../db";
 import moment from "moment";
+import { v4 as uuidv4 } from "uuid";
 
 export class OffDayRepository {
   constructor() {}
@@ -25,5 +26,28 @@ export class OffDayRepository {
 
   findAll = async (): Promise<OffDay[]> => {
     return await this.read();
+  };
+
+  insert = async (
+    newFrom: string,
+    newTo: string,
+    newName: string,
+    newType: OffDayType
+  ): Promise<Boolean> => {
+    try {
+      await db.update(({ offDays }) =>
+        offDays?.push({
+          id: uuidv4().toString(),
+          from: newFrom,
+          name: newName,
+          to: newTo,
+          type: newType,
+        })
+      );
+
+      return true;
+    } catch (error) {}
+
+    return false;
   };
 }

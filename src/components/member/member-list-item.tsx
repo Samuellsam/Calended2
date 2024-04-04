@@ -1,7 +1,7 @@
 import { Box, Tooltip, Typography } from "@mui/material";
 import React from "react";
 import { Member } from "@/types/member";
-import { blue } from "@mui/material/colors";
+import { blue, yellow } from "@mui/material/colors";
 
 const MemberListItem: React.FC<{
   member: Member;
@@ -17,7 +17,9 @@ const MemberListItem: React.FC<{
       }
       arrow
     >
-      <small style={{ color: blue[900] }}>{props.member.name}</small>
+      <small style={{ color: yellow[600] }}>
+        <u>{props.member.name}</u>
+      </small>
     </Tooltip>
   );
 };
