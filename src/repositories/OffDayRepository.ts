@@ -37,7 +37,7 @@ export class OffDayRepository {
     try {
       await db.update(({ offDays }) =>
         offDays?.push({
-          id: uuidv4().toString(),
+          id: uuidv4(),
           from: newFrom,
           name: newName,
           to: newTo,
