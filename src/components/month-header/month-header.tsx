@@ -6,6 +6,8 @@ import { AppDispatch, RootState } from "@/lib/store";
 import { Button, IconButton, Typography } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import { setMonth } from "@/lib/features/calendar/calendar-slice";
 import { blueGrey, grey, yellow } from "@mui/material/colors";
 
@@ -57,40 +59,30 @@ const MonthHeader: React.FC<{
               display: "flex",
             }}
           >
-            <Button
+            <KeyboardDoubleArrowLeftIcon
               className="prev-month-control"
               sx={{
                 marginY: "auto",
-                backgroundColor: blueGrey[100],
-                color: grey[800],
-                ":hover": {
-                  backgroundColor: blueGrey[100],
-                },
+                color: yellow[600],
+                cursor: "pointer",
               }}
               onClick={() => dispatch(setMonth({ month: month - 1 }))}
-            >
-              <ArrowLeftIcon />
-            </Button>
+            ></KeyboardDoubleArrowLeftIcon>
             <div
               style={{
-                marginLeft: "5px",
-                marginRight: "5px",
+                marginLeft: "10px",
+                marginRight: "10px",
               }}
             ></div>
-            <Button
+            <KeyboardDoubleArrowRightIcon
               className="next-month-control"
               sx={{
                 marginY: "auto",
-                backgroundColor: blueGrey[100],
-                color: grey[800],
-                ":hover": {
-                  backgroundColor: blueGrey[100],
-                },
+                color: yellow[600],
+                cursor: "pointer",
               }}
               onClick={() => dispatch(setMonth({ month: month + 1 }))}
-            >
-              <ArrowRightIcon />
-            </Button>
+            ></KeyboardDoubleArrowRightIcon>
           </Box>
         )}
       </Box>

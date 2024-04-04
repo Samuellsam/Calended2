@@ -25,11 +25,14 @@ export const calendarSlice = createSlice({
       state.year = action.payload.year;
     },
     setMonth: (state, action: PayloadAction<{ month: number }>) => {
-      if (action.payload.month < 12) {
+      if (action.payload.month >= 0 && action.payload.month < 12) {
         state.month = action.payload.month;
-      } else {
+      } else if (action.payload.month >= 12) {
         state.month = 0;
         state.year = state.year + 1;
+      } else if (action.payload.month < 0) {
+        state.month = 11;
+        state.year = state.year - 1;
       }
     },
     clearMonthlyCalendar: (state) => {
