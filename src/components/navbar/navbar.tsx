@@ -208,12 +208,12 @@ const Navbar: React.FC<{}> = (props) => {
               />
             )} */}
 
-            <div
+            {/* <div
               style={{
                 marginLeft: "5px",
                 marginRight: "5px",
               }}
-            ></div>
+            ></div> */}
 
             {/* REFRESH */}
             {/* <RefreshIcon
