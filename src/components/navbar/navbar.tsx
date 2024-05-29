@@ -216,7 +216,7 @@ const Navbar: React.FC<{}> = (props) => {
             ></div>
 
             {/* REFRESH */}
-            <RefreshIcon
+            {/* <RefreshIcon
               className="refresh"
               onClick={() => {
                 dispatch(toggleRefresh());
@@ -226,17 +226,17 @@ const Navbar: React.FC<{}> = (props) => {
                 fontWeight: "bold",
                 cursor: "pointer",
               }}
-            />
+            /> */}
 
-            <div
+            {/* <div
               style={{
                 marginLeft: "5px",
                 marginRight: "5px",
               }}
-            ></div>
+            ></div> */}
 
             {/* DOWNLOAD CONFIG */}
-            <FileDownloadIcon
+            {/* <FileDownloadIcon
               className="download_config"
               onClick={() => downloadConfig()}
               sx={{
@@ -244,17 +244,17 @@ const Navbar: React.FC<{}> = (props) => {
                 fontWeight: "bold",
                 cursor: "pointer",
               }}
-            />
+            /> */}
 
-            <div
+            {/* <div
               style={{
                 marginLeft: "5px",
                 marginRight: "5px",
               }}
-            ></div>
+            ></div> */}
 
             {/* MAIN MENU */}
-            <AppRegistrationIcon
+            {/* <AppRegistrationIcon
               className="admin"
               onClick={() => setOpenMenu(!openMenu)}
               sx={{
@@ -262,7 +262,7 @@ const Navbar: React.FC<{}> = (props) => {
                 fontWeight: "bold",
                 cursor: "pointer",
               }}
-            />
+            /> */}
           </Box>
         </Toolbar>
       </AppBar>
