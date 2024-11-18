@@ -161,15 +161,15 @@ const Navbar: React.FC<{}> = (props) => {
               />
             )}
 
-            <div
+            {/* <div
               style={{
                 marginLeft: "5px",
                 marginRight: "5px",
               }}
-            ></div>
+            ></div> */}
 
             {/* LANGUAGE */}
-            <Typography
+            {/* <Typography
               className="language-mode"
               onClick={() => dispatch(toggleLang())}
               sx={{
@@ -179,7 +179,7 @@ const Navbar: React.FC<{}> = (props) => {
               }}
             >
               {lang.abbreviation.toUpperCase()}
-            </Typography>
+            </Typography> */}
 
             {/* <div
               style={{

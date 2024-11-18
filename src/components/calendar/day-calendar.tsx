@@ -41,7 +41,7 @@ const DayCalendar: React.FC<{
       if (isOffDay()) {
         return {
           ...defaultClass,
-          backgroundColor: red[800],
+          backgroundColor: blueGrey[800],
           color: grey[100],
         };
       }
