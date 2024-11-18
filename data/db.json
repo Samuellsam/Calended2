@@ -318,6 +318,146 @@
       "to": "2024-12-26T00:00:00.000Z",
       "name": "Hari Raya Natal.",
       "type": "mass_leave"
+    },
+    {
+      "id": "55fad00d-cce3-4463-b21a-19deff2ac5aa",
+      "from": "2025-01-01T00:00:00.000Z",
+      "to": "2025-01-01T00:00:00.000Z",
+      "name": "Tahun Baru 2025 Masehi",
+      "type": "holiday"
+    },
+    {
+      "id": "14c616ba-99af-45a4-854e-cf46eb3d18c1",
+      "from": "2025-01-27T00:00:00.000Z",
+      "to": "2025-01-27T00:00:00.000Z",
+      "name": "Isra Mikraj Nabi Muhammad S.A.W.",
+      "type": "holiday"
+    },
+    {
+      "id": "3be5c967-44ac-4af5-9d90-a8dbe8127f5a",
+      "from": "2025-01-29T00:00:00.000Z",
+      "to": "2025-01-29T00:00:00.000Z",
+      "name": "Tahun Baru Imlek 2576 Kongzili",
+      "type": "holiday"
+    },
+    {
+      "id": "d812a651-3426-4012-941b-4e3fb2f4e7bb",
+      "from": "2025-03-29T00:00:00.000Z",
+      "to": "2025-03-29T00:00:00.000Z",
+      "name": "Hari Suci Nyepi (Tahun Baru Saka 1947)",
+      "type": "holiday"
+    },
+    {
+      "id": "a7fb484d-e1ae-4691-a3e5-26c4cf8c50aa",
+      "from": "2025-03-31T00:00:00.000Z",
+      "to": "2025-04-01T00:00:00.000Z",
+      "name": "Idul Fitri 1446 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "1793a28f-a558-4e99-af46-b65035d55139",
+      "from": "2025-04-18T00:00:00.000Z",
+      "to": "2025-04-18T00:00:00.000Z",
+      "name": "Wafat Yesus Kristus",
+      "type": "holiday"
+    },
+    {
+      "id": "1fe07fe9-b75a-4081-b96d-7519da4c2ab4",
+      "from": "2025-04-20T00:00:00.000Z",
+      "to": "2025-04-20T00:00:00.000Z",
+      "name": "Kebangkitan Yesus Kristus (Paskah)",
+      "type": "holiday"
+    },
+    {
+      "id": "c52b9c45-639e-4eb8-afb5-903385b91502",
+      "from": "2025-05-01T00:00:00.000Z",
+      "to": "2025-05-01T00:00:00.000Z",
+      "name": "Hari Buruh Internasional",
+      "type": "holiday"
+    },
+    {
+      "id": "b0771e59-13e3-4c85-8529-615f03be4b49",
+      "from": "2025-05-12T00:00:00.000Z",
+      "to": "2025-05-12T00:00:00.000Z",
+      "name": "Hari Raya Waisak 2569 BE",
+      "type": "holiday"
+    },
+    {
+      "id": "03ac711d-081a-4c1b-950d-479732f0444e",
+      "from": "2025-05-29T00:00:00.000Z",
+      "to": "2025-05-29T00:00:00.000Z",
+      "name": "Kenaikan Yesus Kristus",
+      "type": "holiday"
+    },
+    {
+      "id": "26e25a1f-08fb-4fbe-8dbd-976ec8df1b44",
+      "from": "2025-06-01T00:00:00.000Z",
+      "to": "2025-06-01T00:00:00.000Z",
+      "name": "Hari Lahir Pancasila",
+      "type": "holiday"
+    },
+    {
+      "id": "f6d92677-c9b4-458b-a750-3a8493f0cfb2",
+      "from": "2025-06-06T00:00:00.000Z",
+      "to": "2025-06-06T00:00:00.000Z",
+      "name": "Idul Adha 1446 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "3b881e12-e033-4099-88e7-bfb7543c9310",
+      "from": "2025-06-27T00:00:00.000Z",
+      "to": "2025-06-27T00:00:00.000Z",
+      "name": "1 Muharam Tahun Baru Islam 1447 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "b1152fdb-4885-4401-b1a3-348e21e0e729",
+      "from": "2025-08-17T00:00:00.000Z",
+      "to": "2025-08-17T00:00:00.000Z",
+      "name": "Proklamasi Kemerdekaan",
+      "type": "holiday"
+    },
+    {
+      "id": "c189e1cc-6c8a-406d-87dd-ab7d2cd2e195",
+      "from": "2025-09-05T00:00:00.000Z",
+      "to": "2025-09-05T00:00:00.000Z",
+      "name": "Maulid Nabi Muhammad S.A.W.",
+      "type": "holiday"
+    },
+    {
+      "id": "21e17dce-d676-4e4c-97b8-cc2b029f5936",
+      "from": "2025-12-25T00:00:00.000Z",
+      "to": "2025-12-25T00:00:00.000Z",
+      "name": "Kelahiran Yesus Kristus",
+      "type": "holiday"
+    },
+    {
+      "id": "fd8ff1f0-267e-4fc9-8c37-bd6d6cfb1913",
+      "from": "2025-01-28T00:00:00.000Z",
+      "to": "2025-01-28T00:00:00.000Z",
+      "name": "Tahun Baru Imlek 2576 Kongili",
+      "type": "mass_leave"
+    },
+    {
+      "id": "c9d73582-5948-41f1-a63c-4322d86a7d50",
+      "from": "2025-03-28T00:00:00.000Z",
+      "to": "2025-03-28T00:00:00.000Z",
+      "name": "Hari Suci Nyepi (Tahun Baru Saka 1947)",
+      "type": "mass_leave"
+    },
+    {
+      "id": "6fa24dda-75e7-4d8f-87e4-b2742878bb98",
+      "from": "2025-04-02T00:00:00.000Z",
+      "to": "2025-04-04T00:00:00.000Z",
+      "name": "Idul Fitri 1446 Hijriah",
+      "type": "mass_leave"
+    },
+    {
+      "id": "819a4d9b-aa69-43b0-801a-66515f15a556",
+      "from": "2025-04-07T00:00:00.000Z",
+      "to": "2025-04-07T00:00:00.000Z",
+      "name": "Idul Fitri 1446 Hijriah",
+      "type": "mass_leave"
     }
   ],
   "teams": [
