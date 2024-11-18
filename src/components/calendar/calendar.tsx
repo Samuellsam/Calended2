@@ -226,6 +226,9 @@ const Calendar: React.FC<{}> = () => {
     <Box
       sx={{
         paddingBottom: "5px",
+        maxWidth: "1500px",
+        minWidth: "1000px",
+        marginX: "auto",
       }}
     >
       {getCalendar()}
