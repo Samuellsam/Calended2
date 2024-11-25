@@ -1,18 +1,10 @@
 import { DayCalendarModel } from "@/types/day-calendar";
-import {
-  isDateInMonth,
-  isDateInTodayMonth,
-  isToday,
-  isWeekend,
-  todayMonth,
-} from "@/utils/date-util";
+import { isDateInMonth, isToday, isWeekend } from "@/utils/date-util";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
-import moment from "moment";
 import WfoCover from "./wfo-cover";
 import TodaySign from "./today-sign";
 import FullscreenOutlinedIcon from "@mui/icons-material/FullscreenOutlined";
-import { useState } from "react";
 import Marquee from "./marquee";
 import { blueGrey, grey, red } from "@mui/material/colors";
 
@@ -32,7 +24,7 @@ const DayCalendar: React.FC<{
     const defaultClass = {
       position: "relative",
       borderRadius: "5px",
-      margin: "5px",
+      margin: "2px",
       backgroundColor: blueGrey[800],
       color: grey[100],
     };

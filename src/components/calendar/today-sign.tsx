@@ -14,7 +14,7 @@ const TodaySign: React.FC<{}> = (props) => {
         width: "100%",
         height: "100%",
         transform: "translate(-50%, -50%)",
-        border: `5px solid ${grey[100]}`,
+        border: `3px solid ${grey[100]}`,
         textAlign: "center",
       }}
     >
