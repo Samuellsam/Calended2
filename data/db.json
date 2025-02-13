@@ -383,11 +383,25 @@
       "type": "holiday"
     },
     {
+      "id": "14a8211f-a583-4b0e-9469-6583ed1831d5",
+      "from": "2025-05-13T00:00:00.000Z",
+      "to": "2025-05-13T00:00:00.000Z",
+      "name": "Hari Raya Waisak 2569 BE",
+      "type": "mass_leave"
+    },
+    {
       "id": "03ac711d-081a-4c1b-950d-479732f0444e",
       "from": "2025-05-29T00:00:00.000Z",
       "to": "2025-05-29T00:00:00.000Z",
       "name": "Kenaikan Yesus Kristus",
       "type": "holiday"
+    },
+    {
+      "id": "09b2ea18-ce29-46cd-91b3-91e9226ff4fb",
+      "from": "2025-05-30T00:00:00.000Z",
+      "to": "2025-05-30T00:00:00.000Z",
+      "name": "Kenaikan Yesus Kristus",
+      "type": "mass_leave"
     },
     {
       "id": "26e25a1f-08fb-4fbe-8dbd-976ec8df1b44",
@@ -402,6 +416,13 @@
       "to": "2025-06-06T00:00:00.000Z",
       "name": "Idul Adha 1446 Hijriah",
       "type": "holiday"
+    },
+    {
+      "id": "86725298-761c-4f4a-8451-c405befb8950",
+      "from": "2025-06-09T00:00:00.000Z",
+      "to": "2025-06-09T00:00:00.000Z",
+      "name": "Idul Adha 1446 Hijriah",
+      "type": "mass_leave"
     },
     {
       "id": "3b881e12-e033-4099-88e7-bfb7543c9310",
@@ -430,6 +451,13 @@
       "to": "2025-12-25T00:00:00.000Z",
       "name": "Kelahiran Yesus Kristus",
       "type": "holiday"
+    },
+    {
+      "id": "597f3f66-7d17-4e36-961a-051a3afb6922",
+      "from": "2025-12-26T00:00:00.000Z",
+      "to": "2025-12-26T00:00:00.000Z",
+      "name": "Kelahiran Yesus Kristus",
+      "type": "mass_leave"
     },
     {
       "id": "fd8ff1f0-267e-4fc9-8c37-bd6d6cfb1913",
