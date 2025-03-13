@@ -117,14 +117,6 @@ const DayCalendar: React.FC<{
       };
     }
 
-    if (isToday(props.dayCalendar.date)) {
-      return {
-        ...dflt,
-        bgcolor: "white",
-        color: grey[900],
-      };
-    }
-
     if (isWorkDay()) {
       return {
         ...dflt,
