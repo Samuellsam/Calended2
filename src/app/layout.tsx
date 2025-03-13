@@ -28,6 +28,7 @@ export default function RootLayout({
     >
       <head>
         <title>Calended | Minimalistic Work Calendar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body style={{ userSelect: "none" }}>
         <LocalizationProvider dateAdapter={AdapterMoment}>

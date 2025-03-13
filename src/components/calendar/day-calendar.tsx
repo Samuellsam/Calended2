@@ -7,6 +7,12 @@ import TodaySign from "./today-sign";
 import FullscreenOutlinedIcon from "@mui/icons-material/FullscreenOutlined";
 import Marquee from "./marquee";
 import { blueGrey, grey, red } from "@mui/material/colors";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 
 const DayCalendar: React.FC<{
   dayCalendar: DayCalendarModel;
@@ -72,64 +78,146 @@ const DayCalendar: React.FC<{
     return defaultClass;
   };
 
+  const getMobileDayClass = () => {
+    const dflt = {
+      aspectRatio: "1/1",
+      bgcolor: blueGrey[800],
+      borderRadius: "7px",
+      margin: "3px",
+      display: "flex",
+    };
+
+    if (!isDateInMonth(props.dayCalendar.date, props.dayCalendar.month.order)) {
+      if (isOffDay()) {
+        return {
+          ...dflt,
+          bgcolor: blueGrey[800],
+        };
+      }
+
+      return {
+        ...dflt,
+        bgcolor: blueGrey[800],
+      };
+    }
+
+    if (isToday(props.dayCalendar.date)) {
+      return {
+        ...dflt,
+        bgcolor: grey[100],
+      };
+    }
+
+    if (isWorkDay()) {
+      return {
+        ...dflt,
+        bgcolor: props.dayCalendar.wfhTeam?.color,
+      };
+    }
+
+    if (isOffDay()) {
+      return {
+        ...dflt,
+        color: grey[100],
+        bgcolor: red[800],
+      };
+    }
+
+    if (isWeekend(props.dayCalendar.date)) {
+      return {
+        ...dflt,
+        color: grey[100],
+        bgcolor: blueGrey[500],
+      };
+    }
+
+    return dflt;
+  };
+
   return (
-    <Box
-      sx={getDayClass()}
-      style={{
-        aspectRatio: "1/1",
-      }}
-      className="dark-hover"
-    >
-      {props.dayCalendar.wfhTeam && (
-        <WfoCover
-          wfhTeam={props.dayCalendar.wfhTeam}
-          wfoTeam={props.dayCalendar.wfoTeam}
-          mode={
-            isDateInMonth(props.dayCalendar.date, props.dayCalendar.month.order)
-              ? "colorful"
-              : "dark"
-          }
-        />
-      )}
+    <>
+      <BrowserView>
+        <Box
+          sx={getDayClass()}
+          style={{
+            aspectRatio: "1/1",
+          }}
+          className="dark-hover"
+        >
+          {props.dayCalendar.wfhTeam && (
+            <WfoCover
+              wfhTeam={props.dayCalendar.wfhTeam}
+              wfoTeam={props.dayCalendar.wfoTeam}
+              mode={
+                isDateInMonth(
+                  props.dayCalendar.date,
+                  props.dayCalendar.month.order
+                )
+                  ? "colorful"
+                  : "dark"
+              }
+            />
+          )}
 
-      {isToday(props.dayCalendar.date) &&
-        isDateInMonth(
-          props.dayCalendar.date,
-          props.dayCalendar.month.order
-        ) && <TodaySign />}
+          {isToday(props.dayCalendar.date) &&
+            isDateInMonth(
+              props.dayCalendar.date,
+              props.dayCalendar.month.order
+            ) && <TodaySign />}
 
-      <Typography
-        className="font-caveat"
-        sx={{
-          top: "10px",
-          left: "13px",
-          fontWeight: "bold",
-          position: "relative",
-          textAlign: "start",
-        }}
-      >
-        {props.dayCalendar.date.get("date")}
-      </Typography>
+          <Typography
+            className="font-caveat"
+            sx={{
+              top: "10px",
+              left: "13px",
+              fontWeight: "bold",
+              position: "relative",
+              textAlign: "start",
+            }}
+          >
+            {props.dayCalendar.date.get("date")}
+          </Typography>
 
-      {isOffDay() && (
-        <Marquee
-          id={`marquee-${props.dayCalendar.date.toString()}`}
-          text={props.dayCalendar.offDays.map((o) => `${o.name} (${o.type})`)}
-        />
-      )}
+          {isOffDay() && (
+            <Marquee
+              id={`marquee-${props.dayCalendar.date.toString()}`}
+              text={props.dayCalendar.offDays.map(
+                (o) => `${o.name} (${o.type})`
+              )}
+            />
+          )}
 
-      <FullscreenOutlinedIcon
-        className="calendar-detail"
-        onClick={() => props.onDetail(props.dayCalendar)}
-        sx={{
-          cursor: "pointer",
-          position: "absolute",
-          right: "10px",
-          top: "10px",
-          borderRadius: "10px",
-        }}
-      />
-    </Box>
+          <FullscreenOutlinedIcon
+            className="calendar-detail"
+            onClick={() => props.onDetail(props.dayCalendar)}
+            sx={{
+              cursor: "pointer",
+              position: "absolute",
+              right: "10px",
+              top: "10px",
+              borderRadius: "10px",
+            }}
+          />
+        </Box>
+      </BrowserView>
+      <MobileView>
+        <Box
+          sx={getMobileDayClass()}
+          onClick={() => props.onDetail(props.dayCalendar)}
+        >
+          <Typography
+            sx={{
+              fontFamily: "monospace",
+              width: "min-content",
+              fontWeight: "bold",
+              margin: "auto",
+            }}
+          >
+            {props.dayCalendar.date.get("date")}
+          </Typography>
+        </Box>
+      </MobileView>
+    </>
   );
 };
 

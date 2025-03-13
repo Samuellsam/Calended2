@@ -24,6 +24,12 @@ import MainMenu from "../menu/main-menu";
 import { useState } from "react";
 import { blueGrey, grey, red, yellow } from "@mui/material/colors";
 import axios from "axios";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 
 const Navbar: React.FC<{}> = (props) => {
   const lang = useSelector((state: RootState) => state.language.selectedLang);
@@ -60,213 +66,216 @@ const Navbar: React.FC<{}> = (props) => {
 
   return (
     <>
-      <AppBar position="fixed">
-        <Toolbar
-          className="transition-bg"
-          sx={{
-            backgroundColor: blueGrey[800],
-            width: "100%",
-          }}
-        >
-          {/* LOGO */}
-          <Box
+      <BrowserView>
+        <AppBar position="fixed">
+          <Toolbar
+            className="transition-bg"
             sx={{
-              display: "flex",
+              backgroundColor: blueGrey[800],
+              width: "100%",
             }}
           >
-            <Typography
-              variant="h5"
-              component="div"
-              className="font-rubik-doodle-shadow"
+            {/* LOGO */}
+            <Box
               sx={{
-                fontWeight: "bold",
-                marginX: "10px",
-                color: grey[100],
+                display: "flex",
               }}
             >
-              Calended2
-              <IconButton
-                className="prev-year-control"
+              <Typography
+                variant="h5"
+                component="div"
+                className="font-rubik-doodle-shadow"
                 sx={{
-                  marginY: "auto",
+                  fontWeight: "bold",
+                  marginX: "10px",
                   color: grey[100],
                 }}
-                onClick={() => dispatch(setYear({ year: year - 1 }))}
               >
-                <ArrowLeftIcon />
-              </IconButton>
-              <span
+                Calended2
+                <IconButton
+                  className="prev-year-control"
+                  sx={{
+                    marginY: "auto",
+                    color: grey[100],
+                  }}
+                  onClick={() => dispatch(setYear({ year: year - 1 }))}
+                >
+                  <ArrowLeftIcon />
+                </IconButton>
+                <span
+                  style={{
+                    color: yellow[700],
+                  }}
+                >
+                  ({year});
+                </span>
+                <IconButton
+                  className="next-year-control"
+                  sx={{
+                    marginY: "auto",
+                    color: grey[100],
+                  }}
+                  onClick={() => dispatch(setYear({ year: year + 1 }))}
+                >
+                  <ArrowRightIcon />
+                </IconButton>
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                marginLeft: "auto",
+                display: "flex",
+                alignItems: "center",
+                paddingRight: "50px",
+              }}
+            >
+              {/* TODAY */}
+              <TodayOutlinedIcon
+                className="today-scroll"
+                onClick={() => scrollToToday()}
+                sx={{
+                  color: yellow[700],
+                  cursor: "pointer",
+                }}
+              />
+
+              <div
                 style={{
-                  color: yellow[700],
+                  marginLeft: "5px",
+                  marginRight: "5px",
                 }}
-              >
-                ({year});
-              </span>
-              <IconButton
-                className="next-year-control"
-                sx={{
-                  marginY: "auto",
-                  color: grey[100],
-                }}
-                onClick={() => dispatch(setYear({ year: year + 1 }))}
-              >
-                <ArrowRightIcon />
-              </IconButton>
-            </Typography>
-          </Box>
+              ></div>
 
-          <Box
+              {/* MODE */}
+              {mode.id === "month" ? (
+                <StopOutlinedIcon
+                  className="calendar-mode"
+                  onClick={() => dispatch(toggleMode())}
+                  sx={{
+                    color: yellow[700],
+                    cursor: "pointer",
+                  }}
+                />
+              ) : (
+                <GridViewOutlinedIcon
+                  className="calendar-mode"
+                  onClick={() => dispatch(toggleMode())}
+                  sx={{
+                    color: yellow[700],
+                    cursor: "pointer",
+                  }}
+                />
+              )}
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </BrowserView>
+      <MobileView>
+        <AppBar position="fixed">
+          <Toolbar
+            className="transition-bg"
             sx={{
-              marginLeft: "auto",
-              display: "flex",
-              alignItems: "center",
-              paddingRight: "50px",
+              backgroundColor: blueGrey[800],
+              width: "100%",
             }}
           >
-            {/* TODAY */}
-            <TodayOutlinedIcon
-              className="today-scroll"
-              onClick={() => scrollToToday()}
+            {/* LOGO */}
+            <Box
               sx={{
-                color: yellow[700],
-                cursor: "pointer",
-              }}
-            />
-
-            <div
-              style={{
-                marginLeft: "5px",
-                marginRight: "5px",
-              }}
-            ></div>
-
-            {/* MODE */}
-            {mode.id === "month" ? (
-              <StopOutlinedIcon
-                className="calendar-mode"
-                onClick={() => dispatch(toggleMode())}
-                sx={{
-                  color: yellow[700],
-                  cursor: "pointer",
-                }}
-              />
-            ) : (
-              <GridViewOutlinedIcon
-                className="calendar-mode"
-                onClick={() => dispatch(toggleMode())}
-                sx={{
-                  color: yellow[700],
-                  cursor: "pointer",
-                }}
-              />
-            )}
-
-            {/* <div
-              style={{
-                marginLeft: "5px",
-                marginRight: "5px",
-              }}
-            ></div> */}
-
-            {/* LANGUAGE */}
-            {/* <Typography
-              className="language-mode"
-              onClick={() => dispatch(toggleLang())}
-              sx={{
-                color: yellow[700],
-                cursor: "pointer",
-                fontWeight: "bold",
+                display: "flex",
               }}
             >
-              {lang.abbreviation.toUpperCase()}
-            </Typography> */}
+              <Typography
+                variant="body1"
+                component="div"
+                className="font-rubik-doodle-shadow"
+                sx={{
+                  fontWeight: "bold",
+                  marginX: "10px",
+                  color: grey[100],
+                }}
+              >
+                Calended2
+                <IconButton
+                  className="prev-year-control"
+                  sx={{
+                    marginY: "auto",
+                    color: grey[100],
+                  }}
+                  onClick={() => dispatch(setYear({ year: year - 1 }))}
+                >
+                  <ArrowLeftIcon />
+                </IconButton>
+                <span
+                  style={{
+                    color: yellow[700],
+                  }}
+                >
+                  ({year});
+                </span>
+                <IconButton
+                  className="next-year-control"
+                  sx={{
+                    marginY: "auto",
+                    color: grey[100],
+                  }}
+                  onClick={() => dispatch(setYear({ year: year + 1 }))}
+                >
+                  <ArrowRightIcon />
+                </IconButton>
+              </Typography>
+            </Box>
 
-            {/* <div
-              style={{
-                marginLeft: "5px",
-                marginRight: "5px",
+            <Box
+              sx={{
+                marginLeft: "auto",
+                display: "flex",
+                alignItems: "center",
+                paddingRight: "30px",
               }}
-            ></div> */}
-
-            {/* THEME */}
-            {/* {theme.id === "dark" ? (
-              <LightModeIcon
-                className="theme-calendar"
-                onClick={() => dispatch(toggleTheme())}
+            >
+              {/* TODAY */}
+              <TodayOutlinedIcon
+                className="today-scroll"
+                onClick={() => scrollToToday()}
                 sx={{
                   color: yellow[700],
                   cursor: "pointer",
                 }}
               />
-            ) : (
-              <DarkModeIcon
-                className="theme-calendar"
-                onClick={() => dispatch(toggleTheme())}
-                sx={{
-                  cursor: "pointer",
+
+              <div
+                style={{
+                  marginLeft: "5px",
+                  marginRight: "5px",
                 }}
-              />
-            )} */}
+              ></div>
 
-            {/* <div
-              style={{
-                marginLeft: "5px",
-                marginRight: "5px",
-              }}
-            ></div> */}
-
-            {/* REFRESH */}
-            {/* <RefreshIcon
-              className="refresh"
-              onClick={() => {
-                dispatch(toggleRefresh());
-              }}
-              sx={{
-                color: yellow[700],
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            /> */}
-
-            {/* <div
-              style={{
-                marginLeft: "5px",
-                marginRight: "5px",
-              }}
-            ></div> */}
-
-            {/* DOWNLOAD CONFIG */}
-            {/* <FileDownloadIcon
-              className="download_config"
-              onClick={() => downloadConfig()}
-              sx={{
-                color: yellow[700],
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            /> */}
-
-            {/* <div
-              style={{
-                marginLeft: "5px",
-                marginRight: "5px",
-              }}
-            ></div> */}
-
-            {/* MAIN MENU */}
-            {/* <AppRegistrationIcon
-              className="admin"
-              onClick={() => setOpenMenu(!openMenu)}
-              sx={{
-                color: yellow[700],
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            /> */}
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <MainMenu open={openMenu} closeMenu={() => setOpenMenu(false)} />
+              {/* MODE */}
+              {mode.id === "month" ? (
+                <StopOutlinedIcon
+                  className="calendar-mode"
+                  onClick={() => dispatch(toggleMode())}
+                  sx={{
+                    color: yellow[700],
+                    cursor: "pointer",
+                  }}
+                />
+              ) : (
+                <GridViewOutlinedIcon
+                  className="calendar-mode"
+                  onClick={() => dispatch(toggleMode())}
+                  sx={{
+                    color: yellow[700],
+                    cursor: "pointer",
+                  }}
+                />
+              )}
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </MobileView>
     </>
   );
 };

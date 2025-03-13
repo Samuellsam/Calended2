@@ -25,6 +25,12 @@ import {
 } from "@/lib/features/calendar/calendar-slice";
 import TeamListItem from "../team/team-list-item";
 import { blueGrey, grey } from "@mui/material/colors";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 
 const Calendar: React.FC<{}> = () => {
   const theme = useSelector((state: RootState) => state.theme.selectedTheme);
@@ -61,7 +67,7 @@ const Calendar: React.FC<{}> = () => {
       return (
         <Box
           sx={{
-            marginBottom: "120px",
+            marginBottom: isBrowser ? "120px" : "50px",
           }}
           key={months[todayMonth()].order}
         >
@@ -94,7 +100,7 @@ const Calendar: React.FC<{}> = () => {
     return months.map((m) => (
       <Box
         sx={{
-          marginBottom: "120px",
+          marginBottom: isBrowser ? "120px" : "50px",
         }}
         key={m.order}
       >
@@ -227,7 +233,7 @@ const Calendar: React.FC<{}> = () => {
       sx={{
         paddingBottom: "5px",
         maxWidth: "1500px",
-        minWidth: "1000px",
+        minWidth: isBrowser ? "1000px" : "auto",
         marginX: "auto",
       }}
     >
