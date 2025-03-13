@@ -82,8 +82,16 @@ const DayCalendar: React.FC<{
     const dflt = {
       aspectRatio: "1/1",
       bgcolor: blueGrey[800],
-      borderRadius: "7px",
-      margin: "3px",
+      border: isDateInMonth(
+        props.dayCalendar.date,
+        props.dayCalendar.month.order
+      )
+        ? `3px solid ${grey[500]}`
+        : "",
+      borderBottom: isToday(props.dayCalendar.date)
+        ? "7px solid yellow"
+        : `7px solid white`,
+      borderRadius: "5px",
       display: "flex",
     };
 
@@ -92,11 +100,13 @@ const DayCalendar: React.FC<{
         return {
           ...dflt,
           bgcolor: blueGrey[800],
+          borderBottom: "",
         };
       }
 
       return {
         ...dflt,
+        borderBottom: "",
         bgcolor: blueGrey[800],
       };
     }
@@ -104,7 +114,8 @@ const DayCalendar: React.FC<{
     if (isToday(props.dayCalendar.date)) {
       return {
         ...dflt,
-        bgcolor: grey[100],
+        bgcolor: "white",
+        color: grey[900],
       };
     }
 
@@ -205,6 +216,7 @@ const DayCalendar: React.FC<{
           sx={getMobileDayClass()}
           onClick={() => props.onDetail(props.dayCalendar)}
         >
+          {isToday(props.dayCalendar.date) && <div id="today-sign"></div>}
           <Typography
             sx={{
               fontFamily: "monospace",
