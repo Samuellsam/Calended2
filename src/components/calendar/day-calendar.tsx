@@ -91,6 +91,12 @@ const DayCalendar: React.FC<{
       borderBottom: isToday(props.dayCalendar.date)
         ? "7px solid yellow"
         : `7px solid white`,
+      borderRight: isDateInMonth(
+        props.dayCalendar.date,
+        props.dayCalendar.month.order
+      )
+        ? `3px solid ${isToday(props.dayCalendar.date) ? "yellow" : "white"}`
+        : ``,
       borderRadius: "5px",
       display: "flex",
     };
