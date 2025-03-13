@@ -224,6 +224,8 @@ const DayCalendar: React.FC<{
         >
           {isToday(props.dayCalendar.date) && <div id="today-sign"></div>}
           <Typography
+            className="font-caveat"
+            variant="subtitle1"
             sx={{
               fontFamily: "monospace",
               width: "min-content",
