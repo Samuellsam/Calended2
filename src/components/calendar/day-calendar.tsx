@@ -150,6 +150,7 @@ const DayCalendar: React.FC<{
           sx={getDayClass()}
           style={{
             aspectRatio: "1/1",
+            maxWidth: "200px",
           }}
           className="dark-hover"
         >
