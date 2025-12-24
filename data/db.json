@@ -493,6 +493,13 @@
       "to": "2025-08-18T00:00:00.000Z",
       "name": "Cuti bersama HUT ke-80 RI",
       "type": "mass_leave"
+    },
+    {
+      "id": "b7a6924f-6d60-4182-9d32-3dad8e14b63e",
+      "from": "2026-01-01T00:00:00.000Z",
+      "to": "2026-01-01T00:00:00.000Z",
+      "name": "Tahun Baru Masehi",
+      "type": "holiday"
     }
   ],
   "teams": [
