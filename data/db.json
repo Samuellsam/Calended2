@@ -500,6 +500,13 @@
       "to": "2026-01-01T00:00:00.000Z",
       "name": "Tahun Baru Masehi",
       "type": "holiday"
+    },
+    {
+      "id": "25a390fc-caf4-45cc-9688-7d9cb460c07a",
+      "from": "2026-01-16T00:00:00.000Z",
+      "to": "2026-01-16T00:00:00.000Z",
+      "name": "Isra Mi'raj Nabi Muhammad",
+      "type": "holiday"
     }
   ],
   "teams": [
