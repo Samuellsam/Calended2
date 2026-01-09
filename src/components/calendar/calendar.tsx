@@ -232,8 +232,8 @@ const Calendar: React.FC<{}> = () => {
     <Box
       sx={{
         paddingBottom: "5px",
-        maxWidth: "1500px",
-        minWidth: isBrowser ? "1000px" : "auto",
+        maxWidth: "1000px",
+        minWidth: isBrowser ? "750px" : "auto",
         marginX: "auto",
       }}
     >
@@ -241,7 +241,6 @@ const Calendar: React.FC<{}> = () => {
       <Dialog open={isOpen} keepMounted onClose={() => setIsOpen(false)}>
         <DialogTitle
           className="font-caveat"
-          style={{ width: "500px" }}
           sx={{
             fontWeight: "bold",
             backgroundColor: blueGrey[800],

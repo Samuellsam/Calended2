@@ -50,10 +50,11 @@ const TeamListItem: React.FC<{
         }}
       >
         {props.team.members.map((m, idx) => (
-          <span key={idx}>
-            <MemberListItem member={m} key={m.id} />
-            {idx < props.team.members.length - 1 && <span>, </span>}
-          </span>
+          <div key={idx}>
+            <span>
+              <MemberListItem member={m} key={m.id} />
+            </span>
+          </div>
         ))}
       </AccordionDetails>
     </Accordion>
