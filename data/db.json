@@ -507,6 +507,153 @@
       "to": "2026-01-16T00:00:00.000Z",
       "name": "Isra Mi'raj Nabi Muhammad",
       "type": "holiday"
+    },
+    {
+      "id": "81ce6871-fb00-4293-b68d-7d2826de4967",
+      "from": "2026-02-17T00:00:00.000Z",
+      "to": "2026-02-17T00:00:00.000Z",
+      "name": "Tahun Baru Imlek 2577 Kongzili",
+      "type": "holiday"
+    },
+    {
+      "id": "cd066e2d-8b30-4955-84cb-9924cdb12be3",
+      "from": "2026-03-19T00:00:00.000Z",
+      "to": "2026-03-19T00:00:00.000Z",
+      "name": "Harl Suci Nyepi (Tahun Baru Saka 1948)",
+      "type": "holiday"
+    },
+    {
+      "id": "76a7039b-a638-4500-b63f-d90b6b2e5c77",
+      "from": "2026-03-21T00:00:00.000Z",
+      "to": "2026-03-22T00:00:00.000Z",
+      "name": "Idul Fitri 1447 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "1558acd3-a872-4561-a329-af92cf6d2169",
+      "from": "2026-04-03T00:00:00.000Z",
+      "to": "2026-04-03T00:00:00.000Z",
+      "name": "Wafat Yesus Kristus",
+      "type": "holiday"
+    },
+    {
+      "id": "855346ce-bf4f-43ac-bc7b-7d8a838df98a",
+      "from": "2026-04-05T00:00:00.000Z",
+      "to": "2026-04-05T00:00:00.000Z",
+      "name": "Kebangkitan Yesus Kristus (Paskah)",
+      "type": "holiday"
+    },
+    {
+      "id": "d6c51f6f-ecaf-419a-8f8d-af61d337c41f",
+      "from": "2026-05-01T00:00:00.000Z",
+      "to": "2026-05-01T00:00:00.000Z",
+      "name": "Harl Buruh Internasional",
+      "type": "holiday"
+    },
+    {
+      "id": "9bf929fb-d7f1-4312-bcda-1fa9f0f2b66d",
+      "from": "2026-05-14T00:00:00.000Z",
+      "to": "2026-05-14T00:00:00.000Z",
+      "name": "Kenaikan Yesus Kristus",
+      "type": "holiday"
+    },
+    {
+      "id": "6675f2fc-a74f-4134-b8c4-c12890b3decf",
+      "from": "2026-05-27T00:00:00.000Z",
+      "to": "2026-05-27T00:00:00.000Z",
+      "name": "Idul Adha 1447 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "a8a1a973-92ef-4deb-a5c8-c6ad24dd7af5",
+      "from": "2026-05-31T00:00:00.000Z",
+      "to": "2026-05-31T00:00:00.000Z",
+      "name": "Hari Raya Waisak 2570 BE",
+      "type": "holiday"
+    },
+    {
+      "id": "11e0a9eb-1e23-46fb-b435-3354bd6c8388",
+      "from": "2026-06-01T00:00:00.000Z",
+      "to": "2026-06-01T00:00:00.000Z",
+      "name": "Hari Lahir Pancasila",
+      "type": "holiday"
+    },
+    {
+      "id": "f0a5148d-2e1d-4564-81fd-5b0229e1e436",
+      "from": "2026-06-16T00:00:00.000Z",
+      "to": "2026-06-16T00:00:00.000Z",
+      "name": "1 Muharam Tahun Baru Islam 1448 Hijriah",
+      "type": "holiday"
+    },
+    {
+      "id": "944900fc-259f-4f32-94a4-c71c57ebf388",
+      "from": "2026-08-17T00:00:00.000Z",
+      "to": "2026-08-17T00:00:00.000Z",
+      "name": "Proklamasi Kemerdekaan",
+      "type": "holiday"
+    },
+    {
+      "id": "8968c74b-4015-4330-b929-3a8154dbe170",
+      "from": "2026-08-25T00:00:00.000Z",
+      "to": "2026-08-25T00:00:00.000Z",
+      "name": "Maulid Nabi Muhammad S.A.W.",
+      "type": "holiday"
+    },
+    {
+      "id": "18b2e821-2406-4864-9b1e-e648e885262c",
+      "from": "2026-12-25T00:00:00.000Z",
+      "to": "2026-12-25T00:00:00.000Z",
+      "name": "Kelahiran Yesus Kristus",
+      "type": "holiday"
+    },
+    {
+      "id": "ec296515-5066-4a13-a380-a4e717829cc6",
+      "from": "2026-02-16T00:00:00.000Z",
+      "to": "2026-02-16T00:00:00.000Z",
+      "name": "Tahun Baru Imlek 2577 Kongzili",
+      "type": "mass_leave"
+    },
+    {
+      "id": "b0e52602-f707-43a7-a88c-1440a1695997",
+      "from": "2026-03-18T00:00:00.000Z",
+      "to": "2026-03-18T00:00:00.000Z",
+      "name": "Hari Suci Nyepi (Tahun Baru Saka 1948)",
+      "type": "mass_leave"
+    },
+    {
+      "id": "4c47136c-6521-4de7-9366-71ac99819074",
+      "from": "2026-03-20T00:00:00.000Z",
+      "to": "2026-03-20T00:00:00.000Z",
+      "name": "Idul Fitri 1447 Hijriah",
+      "type": "mass_leave"
+    },
+    {
+      "id": "f29225e7-0576-4fe7-be41-a9fd100dd5f3",
+      "from": "2026-03-23T00:00:00.000Z",
+      "to": "2026-03-24T00:00:00.000Z",
+      "name": "Idul Fitri 1447 Hijriah",
+      "type": "mass_leave"
+    },
+    {
+      "id": "14585982-cef6-4268-83ab-fdd12c0bbb64",
+      "from": "2026-05-15T00:00:00.000Z",
+      "to": "2026-05-15T00:00:00.000Z",
+      "name": "Kenaikan Yesus Kristus",
+      "type": "mass_leave"
+    },
+    {
+      "id": "98a014d0-a51c-4b99-8e92-217db1f19218",
+      "from": "2026-05-28T00:00:00.000Z",
+      "to": "2026-05-28T00:00:00.000Z",
+      "name": "Idul Adha 1447 Hijriah",
+      "type": "mass_leave"
+    },
+    {
+      "id": "76497318-916f-4fd4-b753-a6cbf93a7ba1",
+      "from": "2026-12-24T00:00:00.000Z",
+      "to": "2026-12-24T00:00:00.000Z",
+      "name": "Kelahiran Yesus Kristus",
+      "type": "mass_leave"
     }
   ],
   "teams": [
